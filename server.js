@@ -5,6 +5,6 @@ let server = express();
 
 server.use('/', express.static(path.resolve(__dirname, 'public')))
 
-server.listen(3000, () => {
-  console.log('server running at port 3000');
+server.listen(5000, () => {
+  console.log('so far everything ok at port 5000');
 });

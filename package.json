@@ -11,5 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "6.9.4"
   }
 }
