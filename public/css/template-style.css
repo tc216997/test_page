@@ -687,7 +687,7 @@ aside.aside-left {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -794,8 +794,8 @@ aside.aside-left {
   margin-bottom: 20px !important;
   display: block;
 }
-.margin-bottom-30 {
-  margin-bottom: 30px !important;
+.margin-bottom-100 {
+  margin-bottom: 100px !important;
   display: block;
 }
 .margin-bottom-40 {
