@@ -1979,7 +1979,7 @@ nav.background-transparent-hightlight.fixed .top-nav .active-item > a, nav.backg
 }
 .owl-theme .owl-controls .owl-buttons div {
   border: 0 none;
-  color: #C9C9C9 !important;
+  color: #000 !important;
   font-family: sli;
   font-size: 30px;
   height: auto;
@@ -2077,4 +2077,9 @@ video {
 
 .text-shadow-black {
   text-shadow: 2px 2px 0px #fff;
+}
+
+div > iframe {
+  display:block;
+  margin: 0 auto;
 }

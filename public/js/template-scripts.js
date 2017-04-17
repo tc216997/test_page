@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
      navigation : true,
    	 slideSpeed : 300,
    	 paginationSpeed : 400,
-   	 autoPlay : true,
+   	 autoPlay : false,
      addClassActive: true,
      navigationText: ["&#xe605","&#xe606"],
    	 singleItem:true
