@@ -2065,10 +2065,10 @@ video {
 
 .text-opacity {
   background-color: black;
-  width:500px;
-  height:190px;
-  z-index:0;
-  opacity:0.5;
+  width: 500px;
+  height: 190px;
+  z-index: 0;
+  opacity: 0.5;
 }
 
 .text-shadow-white {
@@ -2079,7 +2079,25 @@ video {
   text-shadow: 2px 2px 0px #fff;
 }
 
+.footer-border {
+  border-color: rgba(0, 38, 51, 0.80);
+}
+
+
 div > iframe {
-  display:block;
+  display: block;
   margin: 0 auto;
+}
+
+.out-link > a {
+  width: 375px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: -120px;
+}
+
+.iframe-div {
+  display: inline-block;
+  margin-left: 25px;
+  margin-right: 25px;
 }
