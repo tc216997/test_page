@@ -2101,3 +2101,16 @@ div > iframe {
   margin-left: 25px;
   margin-right: 25px;
 }
+
+.outer-div {
+  display: flex;
+  justify-content: center;
+}
+
+.inner-div {
+  align-self:center;
+}
+
+.border-dark {
+  border: 1px solid black;
+}
