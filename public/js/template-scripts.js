@@ -58,4 +58,8 @@ jQuery(document).ready(function($) {
         $('.sticky').removeClass("fixed");
     }
   });
+  console.log($(this.width()))
+  $(window).resize(function() {
+    console.log($(this.width()))
+  });
 });

@@ -28,6 +28,7 @@ jQuery(document).ready(function($) {
           return false;
       });
   });
+
   //Responsee eside nav
   $('.aside-nav > ul > li ul').each(function(index, element) {
     var count = $(element).find('li').length;
@@ -35,24 +36,24 @@ jQuery(document).ready(function($) {
     $(element).closest('li').children('a').append(content);
   });
   $('.aside-nav > ul > li:has(ul)').addClass('aside-submenu');
-  $('.aside-nav > ul ul > li:has(ul)').addClass('aside-sub-submenu'); 
+  $('.aside-nav > ul ul > li:has(ul)').addClass('aside-sub-submenu');
     $('.aside-nav > ul > li.aside-submenu > a').attr('aria-haspopup', 'true').click(function() {
     //Close other open sub menus
     $('.aside-nav ul li.aside-submenu > ul').removeClass('show-aside-ul', 'slow');
-    $('.aside-nav ul li.aside-submenu:hover > ul').toggleClass('show-aside-ul', 'slow'); 
-  }); 
-  $('.aside-nav > ul ul > li.aside-sub-submenu > a').attr('aria-haspopup', 'true').click(function() { 
+    $('.aside-nav ul li.aside-submenu:hover > ul').toggleClass('show-aside-ul', 'slow');
+  });
+  $('.aside-nav > ul ul > li.aside-sub-submenu > a').attr('aria-haspopup', 'true').click(function() {
     //Close other open sub menus
     $('.aside-nav ul ul li > ul').removeClass('show-aside-ul', 'slow');
     $('.aside-nav ul ul li:hover > ul').toggleClass('show-aside-ul', 'slow');
   });
   //Mobile aside navigation
   $('.aside-nav-text').each(function(index, element) {
-    $(element).click(function() { 
+    $(element).click(function() {
       $('.aside-nav > ul').toggleClass('show-menu', 'slow');
     });
-  });  
-  //Responsee nav   
+  });
+  //Responsee nav
   $('.top-nav > ul > li ul').each(function(index, element) {
     var count = $(element).find('li').length;
     var content = '<span class="count-number"> ' + count + '</span>';
@@ -60,20 +61,20 @@ jQuery(document).ready(function($) {
   });
   $('.top-nav > ul li:has(ul)').addClass('submenu');
   $('.top-nav > ul ul li:has(ul)').addClass('sub-submenu').removeClass('submenu');
-  $('.top-nav > ul li.submenu > a').attr('aria-haspopup', 'true').click(function() { 
+  $('.top-nav > ul li.submenu > a').attr('aria-haspopup', 'true').click(function() {
     //Close other open sub menus
-    $('.top-nav > ul li.submenu > ul').removeClass('show-ul', 'slow'); 
+    $('.top-nav > ul li.submenu > ul').removeClass('show-ul', 'slow');
     $('.top-nav > ul li.submenu:hover > ul').toggleClass('show-ul', 'slow');
-  }); 
-  $('.top-nav > ul ul > li.sub-submenu > a').attr('aria-haspopup', 'true').click(function() {  
-    //Close other open sub menus
-    $('.top-nav ul ul li > ul').removeClass('show-ul', 'slow');  
-    $('.top-nav ul ul li:hover > ul').toggleClass('show-ul', 'slow');   
   });
-  //Mobile aside navigation  
-  $('.nav-text').click(function() { 
+  $('.top-nav > ul ul > li.sub-submenu > a').attr('aria-haspopup', 'true').click(function() {
+    //Close other open sub menus
+    $('.top-nav ul ul li > ul').removeClass('show-ul', 'slow');
+    $('.top-nav ul ul li:hover > ul').toggleClass('show-ul', 'slow');
+  });
+  //Mobile aside navigation
+  $('.nav-text').click(function() {
     $('.top-nav > ul').toggleClass('show-menu', 'slow');
-  }); 
+  });
   //Custom forms
   $(function() {
     var input = document.createElement("input");
@@ -106,14 +107,14 @@ jQuery(document).ready(function($) {
   });
   //Tooltip
   $(".tooltip-container").each(function () {
-    $(this).hover(function(){  
-      var pos = $(this).position();  
+    $(this).hover(function(){
+      var pos = $(this).position();
       var container = $(this);
       var pos = container.offset();
       tip = $(this).find('.tooltip-content');
       tip_top = $(this).find('.tooltip-content.tooltip-top');
       tip_bottom = $(this).find('.tooltip-content.tooltip-bottom');
-      
+
       var height = tip.height();
       tip.fadeIn("fast"); //Show tooltip
       tip_top.css({

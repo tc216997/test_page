@@ -318,7 +318,7 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
 .l-1 {width:8.3333%;}
 .l-2 {width:16.6666%;}
 .l-five {width:20%;}
-.l-3 {width:25%;}
+.l-3 {width:50%;}
 .l-4 {width:33.3333%;}
 .l-5 {width:41.6666%;}
 .l-6 {width:50%;}
@@ -330,6 +330,20 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
 .l-12 {width:100%;}
 .right {float:right;}
 .left {float:left;}
+@media screen and (max-width:1084px) and (min-width:769px) {
+  .margin-top-bottom-80 {
+    margin-top:250px!important;
+  }
+  .top-nav li a, .background-white .top-nav li a {
+    font-size:1.0rem!important;
+  }
+  .outer-div {
+    display:block!important;
+  }
+  .out-link > a {
+    margin-left:-70px!important;
+  }
+}
 @media screen and (max-width:768px) {
   .size-960,.size-1140,.size-1280 {max-width:768px;}
   .hide-l,.hide-s {display:block;}
@@ -407,6 +421,27 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
     font-size:1.1rem;
     margin-left:0.5rem;
     text-align:right;
+  }
+  #kangen {
+    text-align: center!important;
+  }
+  .out-link > a {
+    margin-left:50px!important;
+  }
+
+  .outer-div {
+    display:block!important;
+    text-align:center;
+  }
+  .footer-left-div{
+    text-align:center!important;
+  }
+  .footer-right-div{
+    text-align:center!important;
+    width:100%!important;
+  }
+  .footer-right-text{
+    float:none!important;
   }
   .l-offset-1,.l-offset-2,.l-offset-five,.l-offset-3,.l-offset-4,.l-offset-5,.l-offset-6,.l-offset-7,.l-offset-8,.l-offset-9,.l-offset-10,.l-offset-11,.l-offset-12{margin-left:0;}
   .m-offset-1 {margin-left:8.3333%;}
