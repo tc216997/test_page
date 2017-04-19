@@ -331,6 +331,7 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
 .right {float:right;}
 .left {float:left;}
 @media screen and (max-width:1125px) and (min-width:769px) {
+  .l-6 {width:100%;}
   .margin-top-bottom-80 {
     margin-top:250px!important;
   }
@@ -342,6 +343,9 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
   }
   .out-link > a {
     margin-left:-70px!important;
+  }
+  .inner-div {
+    text-align: center;
   }
 }
 @media screen and (max-width:768px) {
