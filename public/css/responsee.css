@@ -49,7 +49,7 @@ img {
   border:0;
   display:block;
   height:auto;
-  max-width:100%;
+  max-width:95%;
   width:auto;
 }
 .owl-item img, .full-img {
@@ -330,7 +330,7 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
 .l-12 {width:100%;}
 .right {float:right;}
 .left {float:left;}
-@media screen and (max-width:1084px) and (min-width:769px) {
+@media screen and (max-width:1125px) and (min-width:769px) {
   .margin-top-bottom-80 {
     margin-top:250px!important;
   }
