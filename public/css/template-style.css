@@ -2113,3 +2113,16 @@ div > iframe {
 .text-description > p {
   margin-bottom: 20px;
 }
+
+.science-nav {
+  background-color: #fff;
+}
+
+.science-iframe{
+  border: 1px solid black;
+  height: 310px;
+}
+
+.science-iframe > iframe {
+  width: 100%;
+}
