@@ -2126,3 +2126,7 @@ div > iframe {
 .science-iframe > iframe {
   width: 100%;
 }
+
+.no-padding {
+  padding:0 0!important;
+}
