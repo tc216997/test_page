@@ -438,7 +438,6 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
   .out-link > a {
     margin-left:50px!important;
   }
-
   .outer-div {
     display:block!important;
     text-align:center;
@@ -452,6 +451,9 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
   }
   .footer-right-text{
     float:none!important;
+  }
+  .science-top-header {
+    margin-top:40px!important;
   }
   .l-offset-1,.l-offset-2,.l-offset-five,.l-offset-3,.l-offset-4,.l-offset-5,.l-offset-6,.l-offset-7,.l-offset-8,.l-offset-9,.l-offset-10,.l-offset-11,.l-offset-12{margin-left:0;}
   .m-offset-1 {margin-left:8.3333%;}

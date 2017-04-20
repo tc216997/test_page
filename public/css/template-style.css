@@ -95,9 +95,7 @@ h6.headline, .h6.headline {
   font-size: 70px !important;
   line-height: 1.4;
 }
-.text-center {
-  text-align: center;
-}
+
 .text-right {
   text-align: right;
 }
@@ -2132,5 +2130,8 @@ div > iframe {
 }
 
 .science-top-header {
-  margin-top: 75px;
+  margin-top: 100px;
+}
+.footer-section {
+  text-align: center!important;
 }
