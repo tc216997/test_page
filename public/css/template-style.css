@@ -2130,3 +2130,7 @@ div > iframe {
 .no-padding {
   padding:0 0!important;
 }
+
+.science-top-header {
+  margin-top: 75px;
+}

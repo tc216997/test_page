@@ -348,6 +348,12 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
     text-align: center;
   }
 }
+@media screen and (max-width:920px) and (min-width:769px) {
+  .science-top-header {
+    margin-top:150px!important;
+  }
+}
+
 @media screen and (max-width:768px) {
   .size-960,.size-1140,.size-1280 {max-width:768px;}
   .hide-l,.hide-s {display:block;}
