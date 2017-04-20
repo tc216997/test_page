@@ -434,6 +434,7 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
   }
   #kangen {
     text-align: center!important;
+    margin-right: 0!important;
   }
   .out-link > a {
     margin-left:50px!important;
@@ -592,9 +593,4 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
   .s-10 {width:83.3333%;}
   .s-11 {width:91.6666%;}
   .s-12 {width:100%}
-}
-.center {
-  float:none;
-  margin:0 auto;
-  display:block;
 }

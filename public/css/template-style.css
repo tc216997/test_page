@@ -2135,3 +2135,13 @@ div > iframe {
 .footer-section {
   text-align: center!important;
 }
+
+.center {
+  float:none;
+  margin:0 auto;
+  display:block;
+}
+
+#kangen {
+  margin-right: 35px;
+}
