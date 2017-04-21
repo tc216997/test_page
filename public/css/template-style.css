@@ -2119,6 +2119,7 @@ div > iframe {
 .science-iframe{
   border: 1px solid black;
   height: 310px;
+  margin: 10px;
 }
 
 .science-iframe > iframe {
