@@ -7,13 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tc216997/test_page.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tc216997/test_page/issues"
+  },
+  "homepage": "https://github.com/tc216997/test_page#readme",
   "dependencies": {
     "express": "^4.15.2"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": "6.9.4"
   }
 }
