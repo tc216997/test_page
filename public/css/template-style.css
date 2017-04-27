@@ -2126,17 +2126,30 @@ div > iframe {
   margin: 10px;
 }
 
-.science-iframe > iframe {
-  width: 100%;
+.demo-iframe {
+  border: 1px solid black;
+  height: 310px;
+  margin: 10px;
+}
+
+.testimonials-iframe {
+  border: 1px solid black;
+  height: 310px;
+  margin: 10px;
+}
+
+.width-100{
+  width:100%;
 }
 
 .no-padding {
   padding:0 0!important;
 }
 
-.science-top-header {
+.margin-top-100 {
   margin-top: 100px;
 }
+
 .footer-section {
   text-align: center!important;
 }
@@ -2150,3 +2163,24 @@ div > iframe {
 #kangen {
   margin-right: 35px;
 }
+
+.shop-buttons {
+  margin-top: 10px;
+  margin-
+}
+
+.center-images {
+  display: block;
+  max-width: 300;
+  max-height: 300;
+  margin:auto;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.no-wrap{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
