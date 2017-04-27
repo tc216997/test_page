@@ -21,12 +21,20 @@ jQuery(document).ready(function($) {
     }
   });
   **/
-  $('#get-started').click(removeDisplayNone);
+  //fadein and fadeout the divs
+  $('#get-started').click(() => {
+    //removeDisplayNone();
+    $('#main-header').fadeOut(800);
+    $('#div-wrapper-top').fadeIn(800);
+    $('#div-wrapper-bot').fadeIn(800);
+    //$('#problems').scrollIntoView();
+  });
 });
 
+/**
 function removeDisplayNone() {
   document.getElementById('div-wrapper-top').classList.remove('display-none');
   document.getElementById('div-wrapper-bot').classList.remove('display-none');
-  document.getElementById('main-header').classList.add('display-none');
   document.getElementById('problems').scrollIntoView();
 }
+**/
