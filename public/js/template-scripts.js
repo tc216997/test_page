@@ -24,9 +24,9 @@ jQuery(document).ready(function($) {
   //fadein and fadeout the divs
   $('#get-started').click(() => {
     //removeDisplayNone();
-    $('#main-header').fadeOut(800);
-    $('#div-wrapper-top').fadeIn(800);
-    $('#div-wrapper-bot').fadeIn(800);
+    $('#main-header').fadeOut(500);
+    $('#div-wrapper-top').fadeIn(500);
+    $('#div-wrapper-bot').fadeIn(500);
     //$('#problems').scrollIntoView();
   });
 });

@@ -2177,7 +2177,10 @@ div > iframe {
 .width-40 {
   width: 40%;
 }
-
+.bg-image {
+  background-image:url('../img/WaterHeader.jpg');
+  background-size: 100%;
+}
 .no-wrap{
   text-overflow: ellipsis;
   white-space: nowrap;
