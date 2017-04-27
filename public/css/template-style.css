@@ -2164,16 +2164,14 @@ div > iframe {
   margin-right: 35px;
 }
 
-.shop-buttons {
-  margin-top: 10px;
-  margin-
-}
-
 .center-images {
   display: block;
-  max-width: 300;
-  max-height: 300;
   margin:auto;
+}
+
+.images-300x300 {
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .width-40 {

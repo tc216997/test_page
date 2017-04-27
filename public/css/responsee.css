@@ -45,15 +45,12 @@ p,li,dl,blockquote,table,kbd {
 b,strong {font-weight:700;}
 .text-center {text-align:center!important;}
 .text-right {text-align:right!important;}
+
 img {
   border:0;
   display:block;
-  /**
   height:auto;
   max-width:95%;
-  **/
-  max-width:300px;
-  max-height: 300px;
   width:auto;
 }
 .owl-item img, .full-img {
