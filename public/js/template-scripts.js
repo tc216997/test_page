@@ -10,7 +10,6 @@ jQuery(document).ready(function($) {
    	 singleItem:true
   });
 
-
   // Sticky Nav Bar
   $(window).scroll(function() {
     //console.log($(this).scrollTop())
@@ -21,9 +20,11 @@ jQuery(document).ready(function($) {
         $('.sticky').removeClass("fixed");
     }
   });
-
-  function removeDisplayNone() {
-    document.getElementById('div-wrapper').classList.remove('display-none')
-  }
   $('#get-started').click(removeDisplayNone);
 });
+
+function removeDisplayNone() {
+  document.getElementById('div-wrapper-top').classList.remove('display-none');
+  document.getElementById('div-wrapper-bot').classList.remove('display-none');
+  document.getElementById('problems').scrollIntoView();
+}

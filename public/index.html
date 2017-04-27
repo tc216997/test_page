@@ -27,30 +27,30 @@
 
   <body class="size-1140">
     <!-- Banner header -->
-    <header role="banner" class="position-absolute">
-      <!-- Top Navigation -->
-      <nav class="background-transparent background-transparent-hightlight full-width sticky">
+    <div class="display-none" id="div-wrapper-top">
+      <header role="banner" class="position-absolute">
+        <!-- Top Navigation -->
+        <nav class="background-transparent background-transparent-hightlight full-width sticky">
 
-        <div class="top-nav s-12 l-10">
-          <p class="nav-text"></p>
-          <ul class="chevron">
-            <li><a href="index.html"><strong>Home</strong></a></li>
-            <li><a href="science.html"><strong>Science</strong></a></li>
-            <li><a href="demo.html"><strong>Demonstrations</strong></a></li>
-            <li><a href="research.html"><strong>Research</strong></a></li>
-            <li><a href="testimonials.html"><strong>Testimonials</strong></a></li>
-            <li><a href="shop.html"><strong>Shop</strong></a></li>
-          </ul>
-        </div>
+          <div class="top-nav s-12 l-10">
+            <p class="nav-text"></p>
+            <ul class="chevron">
+              <li><a href="index.html"><strong>Home</strong></a></li>
+              <li><a href="science.html"><strong>Science</strong></a></li>
+              <li><a href="demo.html"><strong>Demonstrations</strong></a></li>
+              <li><a href="research.html"><strong>Research</strong></a></li>
+              <li><a href="testimonials.html"><strong>Testimonials</strong></a></li>
+              <li><a href="shop.html"><strong>Shop</strong></a></li>
+            </ul>
+          </div>
 
-      </nav>
-    </header>
-
+        </nav>
+      </header>
+    </div>
     <!-- MAIN -->
     <main role="main">
       <!-- Main Header -->
-      <header>
-
+      <header id="main-header">
         <div class="carousel-default owl-carousel carousel-main carousel-nav-white background-dark text-center">
 
           <div class="item background-dark text-center">
@@ -72,7 +72,7 @@
 
                     <div class="line">
                       <div class="s-12 m-12 l-3 center">
-                        <button class="button button-white-stroke s-12" id="get-started"><strong>Get Started Now<strong></button>
+                        <button class="button button-white-stroke s-12" id="get-started"><strong class="text-size-16">Get Started Now<strong></button>
                       </div>
                     </div>
 
@@ -87,10 +87,10 @@
         </div>
 
       </header>
-      <div class="display-none" id="div-wrapper">
+      <div class="display-none" id="div-wrapper-bot">
         <!-- Section 1 -->
-        <div class="" id="problems">
-          <section class="section background-white text-center">
+
+          <section class="section background-white text-center" id="problems">
             <div class="line">
               <h2 class="text-size-50 text-center">The Problems</h2>
               <hr class="break-small background-primary break-center">
@@ -112,11 +112,10 @@
                 </div>
             </div>
           </section>
-        </div>
+
 
         <!-- Section 2 -->
-        <div class="" id="solution">
-          <section class="full-width">
+          <section class="full-width" id="solution">
             <div class="line">
               <h2 class="text-size-50 text-center">Our Solution</h2>
               <p class="text-size-14 text-dark text-center">Filter your water with our machines</p>
@@ -170,7 +169,7 @@
             </div>
             <hr class="break">
           </section>
-        </div>
+
         <!-- Section 3 -->
 
         <section class="section" id="aboutUs">
@@ -243,7 +242,7 @@
 
 
       <!-- FOOTER -->
-      <footer class="" id="footer">
+      <footer id="footer">
         <hr class="break margin-top-bottom-0 footer-border" style="border-color: rgba(0, 38, 51, 0.80);">
 
         <!-- Bottom Footer -->
