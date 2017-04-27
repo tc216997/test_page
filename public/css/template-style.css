@@ -2190,3 +2190,11 @@ div > iframe {
 .display-none{
   display:none;
 }
+
+.section-shop-dark{
+  padding: 4rem 1.25rem;
+}
+
+.section-shop-light{
+  padding: 2rem 1.25rem;
+}
