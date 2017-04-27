@@ -2182,3 +2182,8 @@ div > iframe {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.display-none{
+  display:none;
+}
