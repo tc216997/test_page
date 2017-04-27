@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
      navigationText: ["&#xe605","&#xe606"],
    	 singleItem:true
   });
-
+/**
   // Sticky Nav Bar
   $(window).scroll(function() {
     //console.log($(this).scrollTop())
@@ -20,11 +20,13 @@ jQuery(document).ready(function($) {
         $('.sticky').removeClass("fixed");
     }
   });
+  **/
   $('#get-started').click(removeDisplayNone);
 });
 
 function removeDisplayNone() {
   document.getElementById('div-wrapper-top').classList.remove('display-none');
   document.getElementById('div-wrapper-bot').classList.remove('display-none');
+  document.getElementById('main-header').classList.add('display-none');
   document.getElementById('problems').scrollIntoView();
 }
