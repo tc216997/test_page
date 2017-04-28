@@ -2116,7 +2116,7 @@ div > iframe {
   margin-bottom: 20px;
 }
 
-.science-nav {
+.sticky-nav {
   background-color: #fff;
 }
 
@@ -2188,7 +2188,7 @@ div > iframe {
 }
 
 .display-none{
-  display:none;
+  display:none!important;
 }
 
 .section-shop-dark{
@@ -2197,4 +2197,102 @@ div > iframe {
 
 .section-shop-light{
   padding: 2rem 1.25rem;
+}
+
+/* modal background */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed; /* stay in place */
+  z-index: 3; /* stays on top */
+  padding-top:40px; /*location of the box */
+  padding-bottom: 40px;
+  left: 0;
+  top: 0;
+  width: 100%; /* full width */
+  height: 100%; /* full height */
+  overflow: auto; /*enable scroll if needed */
+  background-color: rgb(0,0,0); /* fallback color */
+  background-color: rgba(0,0,0,0.9) /* black with opacity */
+}
+
+/* modal content/box */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto; /* 15% frm the top and centered */
+  padding: 0px;
+  border: 1px solid #888;
+  max-width:80%; /* could be more or less, depending on screensize */
+  /* slide animation */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+/* add animation */
+@-webkit-keygrames animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+/* the close button */
+
+.close{
+  color:white;
+  font-size:28px;
+  font-weight:bold;
+  float: right;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  height: 50px;
+}
+
+.modal-header-text{
+  float:left;
+  margin-top: 10px;
+}
+.modal-footer-text{
+  float:left;
+  margin-top:10px;
+}
+.modal-body {
+  padding:20px 16px;
+}
+
+
+.modal-img {
+  margin-top: 50px;
+  max-width: 268px;
+  max-height: 268px;
+  display:block;
+  margin:auto;
+}
+
+.modal-body-text-div > p {
+  color:#002633!important;
+}
+.modal-body-p {
+  margin-top: 10px;
+}
+
+.modal-body-a {
+  width: 248px;
+}
+.modal-body-h3{
+  margin-top:10px;
 }

@@ -465,6 +465,14 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
   .order-button {
     width:48%!important;
   }
+  .modal-body-right-col {
+    text-align:center;
+  }
+  .modal-body-left-col {
+    margin-top: 10px;
+    text-align:center;
+  }
+
   .l-offset-1,.l-offset-2,.l-offset-five,.l-offset-3,.l-offset-4,.l-offset-5,.l-offset-6,.l-offset-7,.l-offset-8,.l-offset-9,.l-offset-10,.l-offset-11,.l-offset-12{margin-left:0;}
   .m-offset-1 {margin-left:8.3333%;}
   .m-offset-2 {margin-left:16.6666%;}
@@ -519,6 +527,7 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
   .m-11 {width:91.6666%;}
   .m-12 {width:100%}
 }
+
 @media screen and (max-width:480px) {
   .size-960,.size-1140,.size-1280 {max-width:480px;}
   .aside-nav li a {text-align: center;}
@@ -545,6 +554,7 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
     height:0;
     overflow:hidden;
   }
+
   .hide-l,.hide-m {display:block;}
   .hide-s {display:none;}
   .count-number {margin-right:-1.25rem;}

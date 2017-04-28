@@ -27,9 +27,9 @@
 
   <body class="size-1140">
     <!-- HEADER -->
-    <header role="banner" class="position-absolute">
+    <header role="banner" class="position-absolute" id="banner-header">
       <!-- Top Navigation -->
-      <nav class=" full-width sticky science-nav">
+      <nav class=" full-width sticky sticky-nav" id="sticky-nav">
 
         <div class="top-nav s-12 l-10">
           <p class="nav-text"></p>
@@ -62,67 +62,240 @@
 
               <div class="s-12">
                 <div class="text-center">
-                  <img class="center-images margin-top-bottom-10 images-300x300" src="img/portfolio/JRII.jpg" alt="JRII Water Machine" title="JRII" />
+                  <img class="center-images margin-top-bottom-10 images-300x300" src="img/shop/JRII.jpg" alt="JRII Water Machine" title="JRII" />
                   <h1>JRII</h1>
-                  <a class="button button-dark-stroke width-40" href=""><strong>Information</strong></a>
+                  <button class="button button-dark-stroke width-40" id="jrii-info-btn" name="jrii"><strong>Information</strong></button>
                 </div>
+
                 <div class="margin-top-20">
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Pay in Full</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Down payment, 16 month installments</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>0 down, no interest, monthly</strong></a>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="jrii"><strong>Pay in Full</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="jrii"><strong>Down payment, 16 month installments</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="jrii"><strong>0 down, no interest, monthly</strong></button>
                 </div>
+
+                <!-- Modal -->
+                <div class="modal" id="jrii-info-modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <!--Modal header with X-->
+                    <div class="modal-header">
+                        <span class="modal-header-text">Go green!</span>
+                        <span class="close" id="jrii-info-btn-close">&times;</span>
+                    </div>
+                    <!--Modal body-->
+                    <div class="modal-body">
+                      <div class="modal-body-div text-center" id="jrii-modal-body-div">
+                        <div class="modal-img-div">
+                          <img class="modal-img" src="img/shop/JRIIsmall.jpg" alt="JRII Water Machine"/>
+                        </div>
+                        <div class="modal-body-text-div">
+                          <h3 class="modal-body-h3"><strong>Energy Saver</strong></h3>
+                          <h3 class="modal-body-h3"><strong>$2,380</strong></h3>
+                          <p class="modal-body-p">The JRII has three solid electrode plates which reduces the energy consumption. Due to the solid platinum-coated titanium plates, this unit can still produce the strong acid and strong Kangen waters.</p>
+                          <p class="modal-body-p">Due to the lower power consumption and fewer plates, this machine is only recommended for singles or couples. Families should consider one of the more robust models above due to the amount of output required.</p>
+                          <h3 class="modal-body-h3"><strong>Capable of producing 5 types of water:</strong></h3>
+                          <p class='margin-left-20'>&bull;  Kangen Water</p>
+                          <p class='margin-left-20'>&bull;  Clean Water</p>
+                          <p class='margin-left-20'>&bull;  Acidic (beauty) water</p>
+                          <p class='margin-left-20'>&bull;  Strong Kangen water</p>
+                          <p class='margin-left-20'>&bull;  Strong Acidic water</p>
+                          <a class="button button-dark-stroke no-wrap modal-body-a margin-top-10" href="https://www.enagic.com/technology_products.php#p=jr2"><strong>Full specs</strong></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               <div class="s-12">
                 <div class="text-center">
-                  <img class="center-images margin-bottom-10 margin-top-20 images-300x300" src="img/portfolio/SD501.jpg" alt="SD501 Water Machine" title="SD501" />
+                  <img class="center-images margin-bottom-10 margin-top-20 images-300x300" src="img/shop/SD501.jpg" alt="SD501 Water Machine" title="SD501" />
                   <h1>SD501</h1>
-                  <a class="button button-dark-stroke width-40" href=""><strong>Information</strong></a>
+                  <button class="button button-dark-stroke width-40" id="sd501-info-btn" name="sd501"><strong>Information</strong></button>
                 </div>
                 <div class="margin-top-20">
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Pay in Full</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Down payment, 16 month installments</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>0 down, no interest, monthly</strong></a>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="sd501"><strong>Pay in Full</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="sd501"><strong>Down payment, 16 month installments</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="sd501"><strong>0 down, no interest, monthly</strong></button>
                 </div>
+                <!-- Modal -->
+                <div class="modal" id="sd501-info-modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <!--Modal header with X-->
+                    <div class="modal-header">
+                        <span class="modal-header-text">Go green!</span>
+                        <span class="close" id="sd501-info-btn-close">&times;</span>
+                    </div>
+                    <!--Modal body-->
+                    <div class="modal-body">
+                      <div class="modal-body-div text-center" id="sd501-modal-body-div">
+                        <div class="modal-img-div">
+                          <img class="modal-img" src="img/shop/SD501small.jpg" alt="SD501 Water Machine"/>
+                        </div>
+                        <div class="modal-body-text-div">
+                          <h3 class="modal-body-h3"><strong>The Ultimate Home Use Model</strong></h3>
+                          <h3 class="modal-body-h3"><strong>$3,980</strong></h3>
+                          <p class="modal-body-p">The SD501 is the finest machine in its class, with the highest quality built-in electrolysis chamber on the market.
+                            This Kangen Water® filtration machine generates a continuous stream of 5 types of water for countless household needs.
+                            You can easily operate the SD501 thanks to a large LCD panel and clear voice prompts.
+                            When you need enough delicious, healthy alkaline water to hydrate your whole family, the SD501 is the product you've been searching for!</p>
+                          <h3 class="modal-body-h3"><strong>Capable of producing 5 types of water:</strong></h3>
+                          <p class='margin-left-20'>&bull;  Kangen Water</p>
+                          <p class='margin-left-20'>&bull;  Clean Water</p>
+                          <p class='margin-left-20'>&bull;  Acidic (beauty) water</p>
+                          <p class='margin-left-20'>&bull;  Strong Kangen water</p>
+                          <p class='margin-left-20'>&bull;  Strong Acidic water</p>
+                          <a class="button button-dark-stroke no-wrap modal-body-a margin-top-10" href="https://www.enagic.com/technology_products.php#p=sd501"><strong>Full specs</strong></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               <div class="s-12">
                 <div class="text-center">
-                  <img class="center-images margin-bottom-10 margin-top-20 images-300x300" src="img/portfolio/SD501Platinum.jpg" alt="SD501 Platinum Water Machine" title="SD501" />
+                  <img class="center-images margin-bottom-10 margin-top-20 images-300x300" src="img/shop/SD501Platinum.jpg" alt="SD501 Platinum Water Machine" title="SD501" />
                   <h1>SD501 Platinum</h1>
-                  <a class="button button-dark-stroke width-40" href=""><strong>Information</strong></a>
+                  <button class="button button-dark-stroke width-40" id="sd501platinum-info-btn" name="sd501platinum"><strong>Information</strong></button>
                 </div>
                 <div class="margin-top-20">
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Pay in Full</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Down payment, 16 month installments</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>0 down, no interest, monthly</strong></a>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="sd501platinum"><strong>Pay in Full</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="sd501platinum"><strong>Down payment, 16 month installments</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="sd501platinum"><strong>0 down, no interest, monthly</strong></button>
                 </div>
+                <!-- Modal -->
+                <div class="modal" id="sd501platinum-info-modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <!--Modal header with X-->
+                    <div class="modal-header">
+                        <span class="modal-header-text">Go green!</span>
+                        <span class="close" id="sd501platinum-info-btn-close">&times;</span>
+                    </div>
+                    <!--Modal body-->
+                    <div class="modal-body">
+                      <div class="modal-body-div text-center" id="sd501platinum-modal-body-div">
+                        <div class="modal-img-div">
+                          <img class="modal-img" src="img/shop/SD501Platinumsmall.jpg" alt="SD501 Platinum Water Machine"/>
+                        </div>
+                        <div class="modal-body-text-div">
+                          <h3 class="modal-body-h3"><strong>Brand New 5-Language SD501 Platinum!</strong></h3>
+                          <h3 class="modal-body-h3"><strong>$4,280</strong></h3>
+                          <p class="modal-body-p">The industry-leading continuous ionized electrolysis water generator system, the SD501 PLATINUM is the finest machine in its class.
+                            With the strongest electrolysis chamber available, fully-equipped with a built-in electrolysis chamber,
+                            and featuring a large LCD panel and clear voice prompts, the SD501 PLATINUM is the leader of the pack.</p>
+                          <p class="modal-body-p">The Multi-Language SD501 Platinum expertly "speaks" in 5 languages: English, German, French, Italian and Spanish!</p>
+                          <h3 class="modal-body-h3"><strong>Capable of producing 5 types of water:</strong></h3>
+                          <p class='margin-left-20'>&bull;  Kangen Water</p>
+                          <p class='margin-left-20'>&bull;  Clean Water</p>
+                          <p class='margin-left-20'>&bull;  Acidic (beauty) water</p>
+                          <p class='margin-left-20'>&bull;  Strong Kangen water</p>
+                          <p class='margin-left-20'>&bull;  Strong Acidic water</p>
+                          <a class="button button-dark-stroke no-wrap modal-body-a margin-top-10" href="https://www.enagic.com/technology_products.php#p=sd501"><strong>Full specs</strong></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               <div class="s-12">
                 <div class="text-center">
-                  <img class="center-images margin-bottom-10 margin-top-30 images-300x300" src="img/portfolio/K8.jpg" alt="K8 Water Machine" title="K8" />
+                  <img class="center-images margin-bottom-10 margin-top-30 images-300x300" src="img/shop/K8.jpg" alt="K8 Water Machine" title="K8" />
                   <h1>K8</h1>
-                  <a class="button button-dark-stroke width-40" href=""><strong>Information</strong></a>
+                  <button class="button button-dark-stroke width-40" id="k8-info-btn" name="k8"><strong>Information</strong></button>
                 </div>
                 <div class="margin-top-20">
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Pay in Full</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Down payment, 16 month installments</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>0 down, no interest, monthly</strong></a>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="k8"><strong>Pay in Full</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="k8"><strong>Down payment, 16 month installments</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="k8"><strong>0 down, no interest, monthly</strong></button>
                 </div>
+                <!-- Modal -->
+                <div class="modal" id="k8-info-modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <!--Modal header with X-->
+                    <div class="modal-header">
+                        <span class="modal-header-text">Go green!</span>
+                        <span class="close" id="k8-info-btn-close">&times;</span>
+                    </div>
+                    <!--Modal body-->
+                    <div class="modal-body">
+                      <div class="modal-body-div text-center" id="k8-modal-body-div">
+                        <div class="modal-img-div">
+                          <img class="modal-img" src="img/shop/k8small.jpg" alt="K8 Water Machine"/>
+                        </div>
+                        <div class="modal-body-text-div">
+                          <h3 class="modal-body-h3"><strong>The Mighty 8-Plate Anti-Oxidizer!</strong></h3>
+                          <h3 class="modal-body-h3"><strong>$4980</strong></h3>
+                          <p class="modal-body-p">The Kangen® 8 is Enagic®'s most powerful antioxidant machine - featuring 8 platinum-dipped titanium plates for improved water ionization and increased antioxidant production potential. </p>
+                          <p class="modal-body-p">Enjoy this Kangen Water® machine in virtually any country, thanks to its worldwide multi-voltage power supply and interchangeable plug capability (sold separately).
+                            If you're looking for a powerful, versatile, feature-loaded machine, the Kangen® 8 is for you.</p>
+                          <h3 class="modal-body-h3"><strong>Capable of producing 5 types of water:</strong></h3>
+                          <p class='margin-left-20'>&bull;  Kangen Water</p>
+                          <p class='margin-left-20'>&bull;  Clean Water</p>
+                          <p class='margin-left-20'>&bull;  Acidic (beauty) water</p>
+                          <p class='margin-left-20'>&bull;  Strong Kangen water</p>
+                          <p class='margin-left-20'>&bull;  Strong Acidic water</p>
+                          <a class="button button-dark-stroke no-wrap modal-body-a margin-top-10" href="https://www.enagic.com/technology_products.php#p=sd501"><strong>Full specs</strong></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
 
               <div class="s-12">
                 <div class="text-center">
-                  <img class="center-images margin-bottom-10 margin-top-30 images-300x300" src="img/portfolio/Super501.jpg" alt="Super501 Water Machine" title="Super501" />
+                  <img class="center-images margin-bottom-10 margin-top-30 images-300x300" src="img/shop/Super501.jpg" alt="Super501 Water Machine" title="Super501" />
                   <h1>Super501</h1>
-                  <a class="button button-dark-stroke width-40" href=""><strong>Information</strong></a>
+                  <button class="button button-dark-stroke width-40" id="super501-info-btn" name="super501"><strong>Information</strong></button>
                 </div>
                 <div class="margin-top-20">
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Pay in Full</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>Down payment, 16 month installments</strong></a>
-                  <a class="button button-dark-stroke s-4 no-wrap" href=""><strong>0 down, no interest, monthly</strong></a>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="super501"><strong>Pay in Full</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="super501"><strong>Down payment, 16 month installments</strong></button>
+                  <button class="button button-dark-stroke s-4 no-wrap" name="super501"><strong>0 down, no interest, monthly</strong></button>
+                </div>
+              </div>
+              <!-- Modal -->
+              <div class="modal" id="super501-info-modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <!--Modal header with X-->
+                  <div class="modal-header">
+                      <span class="modal-header-text">Go green!</span>
+                      <span class="close" id="super501-info-btn-close">&times;</span>
+                  </div>
+                  <!--Modal body-->
+                  <div class="modal-body">
+                    <div class="modal-body-div text-center" id="super501-modal-body-div">
+                      <div class="modal-img-div">
+                        <img class="modal-img" src="img/shop/Super501small.jpg" alt="Super501 Water Machine"/>
+                      </div>
+                      <div class="modal-body-text-div">
+                        <h3 class="modal-body-h3"><strong>The Large Family Unit</strong></h3>
+                        <h3 class="modal-body-h3"><strong>$5980</strong></h3>
+                        <p class="modal-body-p">The Super501 is the highest quality water ionizer for heavy home use, featuring a built-in electrolysis enhancer tank and 7 and 5 electrode plates.
+                          If you need safe, clean alkaline water to hydrate your growing family or business, the Super501 is the perfect solution!
+                          This highly productive machine also generates 5 different types of water for numerous uses around your home or business. With an easy to use LCD screen and clear voice prompts, the Super501 is accessible and simple to operate.</p>
+                        <p class="modal-body-p">This highly productive machine also generates 5 different types of water for numerous uses around your home or business. With an easy to use LCD screen and clear voice prompts, the Super501 is accessible and simple to operate.</p>
+                        <h3 class="modal-body-h3"><strong>Capable of producing 5 types of water:</strong></h3>
+                        <p class='margin-left-20'>&bull;  Kangen Water</p>
+                        <p class='margin-left-20'>&bull;  Clean Water</p>
+                        <p class='margin-left-20'>&bull;  Acidic (beauty) water</p>
+                        <p class='margin-left-20'>&bull;  Strong Kangen water</p>
+                        <p class='margin-left-20'>&bull;  Strong Acidic water</p>
+                        <a class="button button-dark-stroke no-wrap modal-body-a margin-top-10" href="https://www.enagic.com/technology_products.php#p=sd501"><strong>Full specs</strong></a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
