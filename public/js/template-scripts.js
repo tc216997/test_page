@@ -1,3 +1,6 @@
+let visited = {'clicked':true};
+let clicked = JSON.parse(localStorage.getItem('visited'))? true:false;
+let isIndexPage = window.location.pathname === '/' || window.location.pathname === '/index.html'? true:false;
 jQuery(document).ready(function($) {
   // Owl Carousel
   $(".carousel-default").owlCarousel({
@@ -9,32 +12,27 @@ jQuery(document).ready(function($) {
      navigationText: ["&#xe605","&#xe606"],
    	 singleItem:true
   });
-/**
-  // Sticky Nav Bar
-  $(window).scroll(function() {
-    //console.log($(this).scrollTop())
-    if ($(this).scrollTop() > 20){
-        $('.sticky').addClass("fixed");
-    }
-    else{
-        $('.sticky').removeClass("fixed");
-    }
-  });
-  **/
+
   //fadein and fadeout the divs
   $('#get-started').click(() => {
-    //removeDisplayNone();
     $('#main-header').fadeOut(500);
     $('#div-wrapper-top').fadeIn(500);
     $('#div-wrapper-bot').fadeIn(500);
-    //$('#problems').scrollIntoView();
+    localStorage.setItem('visited', JSON.stringify(visited));
   });
+
 });
 
-/**
-function removeDisplayNone() {
-  document.getElementById('div-wrapper-top').classList.remove('display-none');
-  document.getElementById('div-wrapper-bot').classList.remove('display-none');
-  document.getElementById('problems').scrollIntoView();
+function addDisplayNoneDivWrappers() {
+  document.getElementById('div-wrapper-top').className += 'display-none';
+  document.getElementById('div-wrapper-bot').className += 'display-none';
 }
-**/
+function addDisplayNoneMainHeader(){
+  document.getElementById('main-header').className += 'display-none';
+}
+if(!clicked && isIndexPage) {
+  addDisplayNoneDivWrappers();
+}
+if (clicked && isIndexPage) {
+  addDisplayNoneMainHeader();
+}
