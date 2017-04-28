@@ -1,5 +1,7 @@
-let visited = {'clicked':true};
-let clicked = JSON.parse(localStorage.getItem('visited'))? true:false;
+let visited = {};
+let wasVisited = JSON.parse(localStorage.getItem('visited'))? true:false;
+console.log(JSON.parse(localStorage.getItem('visited')))
+console.log(wasVisited)
 let isIndexPage = window.location.pathname === '/' || window.location.pathname === '/index.html'? true:false;
 jQuery(document).ready(function($) {
   // Owl Carousel
@@ -18,21 +20,24 @@ jQuery(document).ready(function($) {
     $('#main-header').fadeOut(500);
     $('#div-wrapper-top').fadeIn(500);
     $('#div-wrapper-bot').fadeIn(500);
-    localStorage.setItem('visited', JSON.stringify(visited));
+    localStorage.setItem('visited', true);
+    console.log(JSON.parse(localStorage.getItem('visited')))
   });
-
+  if (wasVisited && isIndexPage) {
+    console.log('remove class')
+    removeClass(document.getElementById('div-wrapper-top'), 'display-none');
+    removeClass(document.getElementById('div-wrapper-bot'), 'display-none')
+    addDisplayNoneMainHeader();
+  }
+  if(!wasVisited && isIndexPage) {
+    $('main-header').removeClass('display-none');
+  }
 });
 
-function addDisplayNoneDivWrappers() {
-  document.getElementById('div-wrapper-top').className += 'display-none';
-  document.getElementById('div-wrapper-bot').className += 'display-none';
-}
 function addDisplayNoneMainHeader(){
   document.getElementById('main-header').className += 'display-none';
 }
-if(!clicked && isIndexPage) {
-  addDisplayNoneDivWrappers();
-}
-if (clicked && isIndexPage) {
-  addDisplayNoneMainHeader();
+
+function removeClass(element, classname) {
+    element.className = element.className.replace(new RegExp('(?:^|s)' + classname + '(?!S)'), '');
 }
