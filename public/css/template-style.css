@@ -2120,22 +2120,19 @@ div > iframe {
   background-color: #fff;
 }
 
-.science-iframe{
+.ytplayer-div{
   border: 1px solid black;
   height: 310px;
   margin: 10px;
 }
 
-.demo-iframe {
-  border: 1px solid black;
-  height: 310px;
-  margin: 10px;
+.pubmed-break{
+
+  margin-bottom: 20px!important;
 }
 
-.testimonials-iframe {
-  border: 1px solid black;
-  height: 310px;
-  margin: 10px;
+.pubmed-outlinks {
+  margin-bottom: 10px;
 }
 
 .width-100{
