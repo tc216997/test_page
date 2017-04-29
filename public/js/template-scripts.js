@@ -59,21 +59,20 @@ for (let i = 0; i < btns.length; i++) {
   let modal = document.getElementById(name + '-info-modal');
   let modalClose = document.getElementById(name + '-info-btn-close');
   let modalBodyDiv = document.getElementById(name + '-modal-body-div')
-  // add click to open information modal
+
+  //  open information modal
   btns[i].addEventListener('click', function(){
     modal.style.display = 'block';
     navBar.style.display = 'none';
     modalBodyDiv.style.height = 872 + 5;
-    // scroll height
-    console.log(modalBodyDiv.style.height)
-    console.log(modal.scrollHeight);
-
   });
+
   // close modal window if clicked on x
   modalClose.addEventListener('click', function(){
     modal.style.display = 'none';
     navBar.style.display = 'block';
   });
+
   // close modal window if clicked outside of modal body or header
   modal.addEventListener('click', function(event){
     if (event.target.className === 'modal') {
