@@ -2301,7 +2301,8 @@ div > iframe {
   top: 0px;
   font-family: "Open Sans";
   text-decoration: none;
-  font-size: 25px;
+  font-size: 0.85rem;
+  text-align:center;
   background: #f7f7f7;
   padding: 15px 50px;
   margin: 0;
@@ -2352,4 +2353,5 @@ div > iframe {
   box-shadow: 0px 5px 0px #07121b;
   color: #fff;
   text-shadow: 1px 1px 1px #07121b;
+  margin-bottom: 10px;
 }
