@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/tc216997/test_page#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "nodemailer": "^4.0.1"
   },
   "devDependencies": {},
   "description": ""
