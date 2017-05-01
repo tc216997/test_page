@@ -182,9 +182,8 @@ a.tooltip-content.tooltip-bottom,.tooltip-content.tooltip-bottom {
   opacity: 0.2;
 }
 .button i {
-  background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
   border-radius: 27px;
-  color: #fff;
+  color: #002633;
   display: inline-block;
   font-size: 0.8rem;
   height: 27px;

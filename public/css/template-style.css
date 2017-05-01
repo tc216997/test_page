@@ -637,6 +637,9 @@ aside.aside-left {
   background: #002633 none repeat scroll 0 0;
   color: #fff;
 }
+.button.button-dark-stroke:hover *{
+  color: #fff;
+}
 
 /* Containers */
 .section  {
@@ -2296,16 +2299,16 @@ div > iframe {
 }
 
 .fa-dark{
-  background: none!important;
-  color:#002633!important;
+  background:none;
+  color:#002633;
 }
 
 .fa-light{
-  background:none!important;
-  color:#fff!important;
+  background:none;
+  color:#fff;
 }
 
-/*==========  Popout Button Structure  ==========*/
+/*pushdown button structure*/
 .btn-push {
   position: relative;
   top: 0px;
@@ -2333,7 +2336,8 @@ div > iframe {
   -ms-transition: All 250ms ease;
   transition: All 250ms ease;
 }
-/*==========  Active State  ==========*/
+
+/*active state of pushdown button*/
 .btn-push:active {
   position: relative;
   top: 5px;
@@ -2349,19 +2353,36 @@ div > iframe {
   transition: All 50ms ease;
 }
 
-/*==========  Navy  ==========*/
+/*navy*/
 .btn-push.navy {
   background: #1b486d!important;
-  border: 1px solid #07121b;
+  border: 1px solid #153855;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 0px #07121b;
-  -moz-box-shadow: 0px 5px 0px #07121b;
-  -ms-box-shadow: 0px 5px 0px #07121b;
-  -o-box-shadow: 0px 5px 0px #07121b;
-  box-shadow: 0px 5px 0px #07121b;
+  -webkit-box-shadow: 0px 5px 0px #153855;
+  -moz-box-shadow: 0px 5px 0px #153855;
+  -ms-box-shadow: 0px 5px 0px #153855;
+  -o-box-shadow: 0px 5px 0px #153855;
+  box-shadow: 0px 5px 0px #153855;
   color: #fff!important;
-  text-shadow: 1px 1px 1px #07121b;
+  text-shadow: 1px 1px 1px #153855;
+  margin-bottom: 10px;
+}
+
+/*green color*/
+.btn-push.green {
+  background: #5cb85c!important;
+  border: 1px solid #46963f;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 0px #46963f;
+  -moz-box-shadow: 0px 5px 0px #46963f;
+  -ms-box-shadow: 0px 5px 0px #46963f;
+  -o-box-shadow: 0px 5px 0px #46963f;
+  box-shadow: 0px 5px 0px #46963f;
+  color: #fff!important;
+  text-shadow: 1px 1px 1px #46963f;
   margin-bottom: 10px;
 }

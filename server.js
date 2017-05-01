@@ -7,42 +7,42 @@ server.set('port', process.env.PORT || 3000 )
 server.use(express.static(path.resolve(__dirname, 'public')));
 
 server.get('/', (req, res) => {
-/**  let publicPath = path.resolve(__dirname, 'public');
-  let indexFile = path.resolve(publicPath, 'index.html')
-  res.sendFile(indexFile);
-  **/
-  res.sendFile(pathFile('index'))
+  res.sendFile(getFile('index'))
 });
 
 server.get('/science/', (req, res) => {
-  res.sendFile(pathFile('science'))
+  res.sendFile(getFile('science'))
 });
 
 server.get('/testimonials/', (req, res) => {
-  res.sendFile(pathFile('testimonials'))
+  res.sendFile(getFile('testimonials'))
 });
 
 server.get('/demo/', (req, res) => {
-  res.sendFile(pathFile('demo'))
+  res.sendFile(getFile('demo'))
 });
 
 server.get('/shop/', (req, res) => {
-  res.sendFile(pathFile('shop'))
+  res.sendFile(getFile('shop'))
 });
 
 server.get('/contact/', (req, res) => {
-  res.sendFile(pathFile('contact'))
+  res.sendFile(getFile('contact'))
 });
 
-server.get('*', (req, res) => {
-  res.status(404).sendFile("404.html", {"root": path.resolve(__dirname, 'public')});
+// 404 and 500 status error handling
+server.use((req, res) => {
+  res.status(400).sendFile("404.html", {"root": path.resolve(__dirname, 'public')});
+});
+server.use((error, req, res, next) => {
+  res.status(500).send('uh oh something went wrong');
 });
 
 server.listen(server.get('port'), () => {
   console.log('so far everything ok at port ' + server.get('port'));
 });
 
-function pathFile(pathname) {
+function getFile(pathname) {
   let publicPath = path.resolve(__dirname, 'public');
   let file = path.resolve(publicPath, pathname +'.html');
   return file;
