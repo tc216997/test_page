@@ -2326,7 +2326,7 @@ div > iframe {
    margin-right: auto;
    height: 400px;
 }
-
+textarea { resize: vertical; }
 /*pushdown button structure*/
 .btn-push {
   position: relative;

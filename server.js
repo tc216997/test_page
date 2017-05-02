@@ -1,26 +1,27 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-//const nodemailer = require('nodemailer');
-let sendmail = require('sendmail')({silent: true, devPort: 587});
+const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const request = require('request');
 const server = express();
 server.set('port', process.env.PORT || 3000 );
 server.use(bodyParser.urlencoded({extended:true}));
 server.use(express.static(path.resolve(__dirname, 'public')));
-/**
+
 let transporter = nodemailer.createTransport({
-  'service': 'gmail',
-  'auth':
-    XOAuth2: {
-      user: process.env.EMAILUSER,
-      clientId: process.env.OAUTHTOKENID,
-      clientSecret: process.env.OAUTHTOKENSECRET,
-      refreshToken: process.env.OAUTHREFRESHTOKEN,
+    service: 'Gmail',
+    auth: {
+        type: 'OAuth2',
+        user: process.env.EMAILUSER,
+        clientId: process.env.TOKENID,
+        clientSecret: process.env.TOKENSECRET,
+        refreshToken: process.env.REFRESHTOKEN,
+        accessToken: process.env.ACCESSTOKEN,
+        expires: 3600
     }
 });
-**/
+
 server.get('/', (req, res) => {
   res.sendFile(getFile('index'));
 });
@@ -54,10 +55,10 @@ server.post('/send-email', (req, res) => {
   let senderName = req.body.name;
   let emailSubject = req.body.subject;
   let emailMsg = req.body.message;
-
   let googleRes = req.body['g-recaptcha-response'];
   let secret = process.env.SECRET;
   let url = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secret + "&response=" + googleRes //+ "&remoteip=" + req.connection.remoteAddress;
+
   if (!req.body['g-recaptcha-response']) {
     return res.sendFile(getFile('invalid-captcha'));
   } else {
@@ -74,23 +75,7 @@ server.post('/send-email', (req, res) => {
         if(!data.success) {
           res.status(403).sendFile(getFile('invalid-captcha'));
         } else {
-          /**
-          //sendEmail(emailAddress, senderName, emailSubject, emailMsg);
-          // send email
-          console.log(emailAddress);
-          console.log(process.env.EMAILUSER);
-          console.log(emailSubject)
-          console.log(emailMsg)**/
-          sendmail({
-            from: emailAddress,
-            to: process.env.EMAILUSER,
-            subject: emailSubject,
-            text: emailMsg,
-          }, (emailerror, reply) => {
-            console.log(emailerror && emailerror.stack)
-            console.dir(reply)
-          })
-          res.status(200).redirect('/email-sent');
+          sendEmail(emailAddress, senderName, emailSubject, emailMsg, res);
         }
       }
     });
@@ -110,30 +95,29 @@ server.listen(server.get('port'), () => {
   console.log('so far everything ok at port ' + server.get('port'));
 });
 
+//get and return file path
 function getFile(pathname) {
   let publicPath = path.resolve(__dirname, 'public');
-  let file = path.resolve(publicPath, pathname +'.html');
-  return file;
+  let filePath = path.resolve(publicPath, pathname +'.html');
+  return filePath;
 }
 
-function sendEmail() {
-
-}
-
-/**
 // send email using nodemailer
-function sendEmail(senderAddress, sender, emailSubject, emailMsg) {
+function sendEmail(senderAddress, sender, emailSubject, emailMsg, res) {
   let mailOptions = {
-    from: sender,
+    from: sender + ' ' + senderAddress,
     to: process.env.EMAILUSER,
     subject: emailSubject,
-    text: '\nname: ' + sender + '\nemail address: ' + senderAddress + '\nhas sent you the following message: ' + emailMsg,
+    html: '<strong><br>Customer name:</strong>  ' + sender + '<br><strong>Customer email address:  </strong>' + senderAddress  + '<br><strong>has sent you the following message:  </strong><br>' + emailMsg,
   }
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
-      return console.log(err)
+      res.status(500).sendFile(getFile('bad-email'));
+      return console.log(err);
+    } else {
+      console.log('email %s sent: %s', info.messageId, info.response );
+      res.status(200).redirect('/email-sent');
     }
-    console.log('email %s sent: %s', info.messageId, info.response )
+
   });
 }
-**/
