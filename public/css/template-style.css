@@ -2308,6 +2308,25 @@ div > iframe {
   color:#fff;
 }
 
+#recaptcha {
+  width: 304px;
+  margin: 0 auto;
+}
+
+#vertical-center-outer{
+   position: absolute;
+   top: 50%;
+   margin-top: -200px;/* half of #content height*/
+   left: 0;
+   width: 100%;
+}
+#vertical-center-inner {
+   width: 624px;
+   margin-left: auto;
+   margin-right: auto;
+   height: 400px;
+}
+
 /*pushdown button structure*/
 .btn-push {
   position: relative;

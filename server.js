@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const request = require('request');
+const apiKeys = require('./config/secret.js');
 const server = express();
 
 server.set('port', process.env.PORT || 3000 );
@@ -37,12 +39,34 @@ server.get('/email-sent', (req, res) => {
 });
 
 server.post('/send-email', (req, res) => {
-
+/**
   console.log(req.body.email);
   console.log(req.body.name);
   console.log(req.body.subject);
   console.log(req.body.message);
-  res.status(200).redirect('/email-sent');
+  **/
+  let googleRes = req.body['g-recaptcha-response'];
+  let secret = apiKeys.recaptchaKey;
+  let url = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secret + "&response=" + googleRes //+ "&remoteip=" + req.connection.remoteAddress;
+  if (!req.body['g-recaptcha-response']) {
+    return res.sendFile(getFile('invalid-captcha'));
+  } else {
+    request.get({
+      url: url,
+      json: true,
+      headers: {'User-Agent': 'request'}
+    }, (error, response, data) => {
+      if (error) {
+        console.log('Error: ', error );
+      } else if (response.statusCode !== 200) {
+        console.log('Status: ', response.statusCode);
+      } else {
+        (!data.success)?
+          res.status(403).sendFile(getFile('invalid-captcha')) :
+          res.status(200).redirect('/email-sent');
+      }
+    });
+  }
 
 });
 
