@@ -19,6 +19,7 @@
   "homepage": "https://github.com/tc216997/test_page#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
     "express": "^4.15.2",
     "nodemailer": "^4.0.1",
     "request": "^2.81.0"

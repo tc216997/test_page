@@ -1,11 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const request = require('request');
-const apiKeys = require('./config/secret.js');
 const server = express();
-
 server.set('port', process.env.PORT || 3000 );
 server.use(bodyParser.urlencoded({extended:true}));
 server.use(express.static(path.resolve(__dirname, 'public')));
@@ -46,7 +45,7 @@ server.post('/send-email', (req, res) => {
   console.log(req.body.message);
   **/
   let googleRes = req.body['g-recaptcha-response'];
-  let secret = apiKeys.recaptchaKey;
+  let secret = process.env.SECRET;
   let url = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secret + "&response=" + googleRes //+ "&remoteip=" + req.connection.remoteAddress;
   if (!req.body['g-recaptcha-response']) {
     return res.sendFile(getFile('invalid-captcha'));
@@ -75,7 +74,7 @@ server.use((req, res) => {
   res.status(400).sendFile("404.html", {"root": path.resolve(__dirname, 'public')});
 });
 server.use((error, req, res, next) => {
-  res.status(500).send('uh oh something went wrong');
+  res.status(500).sendFile("500.html", {"root": path.resolve(__dirname, 'public')});;
 });
 
 server.listen(server.get('port'), () => {
