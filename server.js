@@ -1,14 +1,26 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const nodemailer = require('nodemailer');
+//const nodemailer = require('nodemailer');
+let sendmail = require('sendmail')({silent: true, devPort: 587});
 const bodyParser = require('body-parser');
 const request = require('request');
 const server = express();
 server.set('port', process.env.PORT || 3000 );
 server.use(bodyParser.urlencoded({extended:true}));
 server.use(express.static(path.resolve(__dirname, 'public')));
-
+/**
+let transporter = nodemailer.createTransport({
+  'service': 'gmail',
+  'auth':
+    XOAuth2: {
+      user: process.env.EMAILUSER,
+      clientId: process.env.OAUTHTOKENID,
+      clientSecret: process.env.OAUTHTOKENSECRET,
+      refreshToken: process.env.OAUTHREFRESHTOKEN,
+    }
+});
+**/
 server.get('/', (req, res) => {
   res.sendFile(getFile('index'));
 });
@@ -38,12 +50,11 @@ server.get('/email-sent', (req, res) => {
 });
 
 server.post('/send-email', (req, res) => {
-/**
-  console.log(req.body.email);
-  console.log(req.body.name);
-  console.log(req.body.subject);
-  console.log(req.body.message);
-  **/
+  let emailAddress = req.body.email;
+  let senderName = req.body.name;
+  let emailSubject = req.body.subject;
+  let emailMsg = req.body.message;
+
   let googleRes = req.body['g-recaptcha-response'];
   let secret = process.env.SECRET;
   let url = 'https://www.google.com/recaptcha/api/siteverify?secret=' + secret + "&response=" + googleRes //+ "&remoteip=" + req.connection.remoteAddress;
@@ -60,9 +71,27 @@ server.post('/send-email', (req, res) => {
       } else if (response.statusCode !== 200) {
         console.log('Status: ', response.statusCode);
       } else {
-        (!data.success)?
-          res.status(403).sendFile(getFile('invalid-captcha')) :
+        if(!data.success) {
+          res.status(403).sendFile(getFile('invalid-captcha'));
+        } else {
+          /**
+          //sendEmail(emailAddress, senderName, emailSubject, emailMsg);
+          // send email
+          console.log(emailAddress);
+          console.log(process.env.EMAILUSER);
+          console.log(emailSubject)
+          console.log(emailMsg)**/
+          sendmail({
+            from: emailAddress,
+            to: process.env.EMAILUSER,
+            subject: emailSubject,
+            text: emailMsg,
+          }, (emailerror, reply) => {
+            console.log(emailerror && emailerror.stack)
+            console.dir(reply)
+          })
           res.status(200).redirect('/email-sent');
+        }
       }
     });
   }
@@ -86,3 +115,25 @@ function getFile(pathname) {
   let file = path.resolve(publicPath, pathname +'.html');
   return file;
 }
+
+function sendEmail() {
+
+}
+
+/**
+// send email using nodemailer
+function sendEmail(senderAddress, sender, emailSubject, emailMsg) {
+  let mailOptions = {
+    from: sender,
+    to: process.env.EMAILUSER,
+    subject: emailSubject,
+    text: '\nname: ' + sender + '\nemail address: ' + senderAddress + '\nhas sent you the following message: ' + emailMsg,
+  }
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) {
+      return console.log(err)
+    }
+    console.log('email %s sent: %s', info.messageId, info.response )
+  });
+}
+**/
