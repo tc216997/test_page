@@ -334,11 +334,7 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
 .l-12 {width:100%;}
 .right {float:right;}
 .left {float:left;}
-@media screen and (min-width:769px) and (max-width:967px) {
-  #problems {
-    margin-top: 100px;
-  }
-}
+
 @media screen and (max-width:1125px) and (min-width:769px) {
   .l-6 {width:100%;}
   .margin-top-bottom-80 {
@@ -451,9 +447,6 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
     text-align: center!important;
     margin-right: 0!important;
   }
-  .out-link > a {
-    margin-left:50px!important;
-  }
   .outer-div {
     display:block!important;
     text-align:center;
@@ -470,9 +463,6 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
   }
   .science-top-header {
     margin-top:40px!important;
-  }
-  .order-button {
-    width:48%!important;
   }
   .modal-body-right-col {
     text-align:center;

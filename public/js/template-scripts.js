@@ -1,20 +1,34 @@
 jQuery(document).ready(function($) {
-  // Owl Carousel
-  $(".carousel-default").owlCarousel({
-     navigation : false,
-   	 slideSpeed : 300,
-   	 pagination: false,
-   	 autoPlay : false,
-     addClassActive: true,
-     navigationText: ["&#xe605","&#xe606"],
-   	 singleItem:true
+  // on resize adjust the top margin of top header
+  $(window).resize(() => {
+    navHeight = $('#sticky-nav').height();
+    topHeaderHeight = $('#top-header').height();
+    if (navHeight === 146) {
+      $('#top-header').css('margin-top', '170px');
+    } else if (navHeight === 88 ){
+      $('#top-header').css('margin-top', '30px');
+    } else {
+      $('#top-header').css('margin-top', '100px');
+    }
+  });
+  // Sticky Nav Bar
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 20){
+        $('.sticky').addClass("fixed");
+    }
+    else{
+        $('.sticky').removeClass("fixed");
+    }
   });
 
-  //fadein and fadeout the divs
-  $('#get-started').click(() => {
-    $('#main-header').fadeOut(500);
-    $('#div-wrapper-top').fadeIn(500);
-    $('#div-wrapper-bot').fadeIn(500);
-    localStorage.setItem('visited', true);
-  });
 });
+// hacky solution to make the top header look responsive
+let navEle= document.getElementById('sticky-nav');
+let topHeaderEle = document.getElementById('top-header');
+if (navEle.offsetHeight === 148) {
+  topHeaderEle.style.marginTop = '170px';
+} else if (navEle.offsetHeight === 89) {
+  topHeaderEle.style.marginTop = '30px';
+} else {
+  topHeaderEle.style.marginTop = '100px';
+}

@@ -643,7 +643,8 @@ aside.aside-left {
 
 /* Containers */
 .section  {
-  padding: 6rem 1.25rem;
+  padding: 2rem 1.25rem;
+  padding-bottom: 2rem;
 }
 .section-small-padding  {
   padding: 2.5rem 1.25rem;
@@ -682,9 +683,7 @@ aside.aside-left {
   top: 0;
   width: 100%;
 }
-.center {
-  display: block!important;
-}
+
 .border-radius  {
   border-radius: 3px;
 }
@@ -783,6 +782,7 @@ aside.aside-left {
   margin-top: 80px !important;
   display: block;
 }
+
 .margin-bottom-0 {
   margin-bottom: 0 !important;
   display: block;
@@ -2088,17 +2088,9 @@ video {
   border-color: rgba(0, 38, 51, 0.80);
 }
 
-
 div > iframe {
   display: block;
   margin: 0 auto;
-}
-
-.out-link > a {
-  width: 375px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: -70px;
 }
 
 .iframe-div {
