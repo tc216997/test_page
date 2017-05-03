@@ -157,7 +157,9 @@ function fullWidthStyles() {
   console.log(document.getElementById('index-iframe1').getAttribute('width'))
   console.log(document.getElementById('index-iframe2').getAttribute('width'))
   document.getElementById('index-iframe1').style.width = 500 + 'px';
+  document.getElementById('index-iframe1').style.marginBottom = '10px';
   document.getElementById('index-iframe2').style.width = 500 + 'px';
+  document.getElementById('index-iframe2').style.marginBottom = '10px';
   document.getElementById('index-section2-button').style.width = 688 + 'px';
   document.getElementById('index-section2-button').style.cssFloat = 'none';
   document.getElementById('index-order-div').style.textAlign = 'center';
