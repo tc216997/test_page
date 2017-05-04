@@ -104,6 +104,7 @@ function smallMobileStyles() {
 
 function largerMobileStyles() {
   // for mobile viewport between 481 and 768
+
   document.getElementById('problems').style.marginTop = '0px';
   indexiframeDiv1.style.marginLeft = '0px';
   indexiframeDiv2.style.marginLeft = '0px';
@@ -120,13 +121,12 @@ function largerMobileStyles() {
 
 function tabletStyles() {
   // for tablet viewport between 769 and 983
+  largerMobileStyles()
   document.getElementById('problems').style.marginTop = '120px';
   indexiframeDiv1.style.marginLeft = '0px';
   indexiframeDiv2.style.marginLeft = '0px';
   document.getElementById('index-iframe1').style.width = 688 + 'px';
-  document.getElementById('index-iframe1').style.marginBottom = '10px';
   document.getElementById('index-iframe2').style.width = 688 + 'px';
-  document.getElementById('index-iframe2').style.marginBottom = '10px';
   document.getElementById('index-section2-button').style.width = 688 + 'px';
   document.getElementById('index-section2-button').style.cssFloat = 'none';
   document.getElementById('index-order-div').style.textAlign = 'center';
@@ -136,33 +136,17 @@ function tabletStyles() {
 
 function largerTabletStyles() {
   // for tablet viewport between 769 and 983
+  tabletStyles()
   document.getElementById('problems').style.marginTop = '70px';
-  indexiframeDiv1.style.marginLeft = '0px';
-  indexiframeDiv2.style.marginLeft = '0px';
-  document.getElementById('index-iframe1').style.width = 688 + 'px';
-  document.getElementById('index-iframe1').style.marginBottom = '10px';
-  document.getElementById('index-iframe2').style.width = 688 + 'px';
-  document.getElementById('index-iframe2').style.marginBottom = '10px';
-  document.getElementById('index-section2-button').style.width = 688 + 'px';
-  document.getElementById('index-section2-button').style.cssFloat = 'none';
-  document.getElementById('index-order-div').style.textAlign = 'center';
-  document.getElementById('index-section3-p2').style.textAlign = 'center';
-  document.getElementById('index-section3-p3').style.textAlign = 'center';
 }
 
 function fullWidthStyles() {
   // larger than 1181 px width
-  document.getElementById('problems').style.marginTop = '70px';
-  console.log(viewportWidth)
-  console.log(document.getElementById('index-iframe1').getAttribute('width'))
-  console.log(document.getElementById('index-iframe2').getAttribute('width'))
+  largerTabletStyles()
   document.getElementById('index-iframe1').style.width = 500 + 'px';
-  document.getElementById('index-iframe1').style.marginBottom = '10px';
   document.getElementById('index-iframe2').style.width = 500 + 'px';
-  document.getElementById('index-iframe2').style.marginBottom = '10px';
-  document.getElementById('index-section2-button').style.width = 688 + 'px';
   document.getElementById('index-section2-button').style.cssFloat = 'none';
-  document.getElementById('index-order-div').style.textAlign = 'center';
+
 }
 
 function addDisplayNoneMainHeader(){
