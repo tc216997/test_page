@@ -1,5 +1,6 @@
 $(document).ready(function() {
   lazyLoad()
+  // on scroll
   $(window).scroll(function() {
     lazyLoad();
   });
@@ -18,7 +19,6 @@ function lazyLoad() {
     if (!hasLoaded && windowTop >= divTop) {
       $(this).attr('loaded', true);
       $(this).html(ytVids[index]);
-      console.log('loading up ' + $(this).attr('id'))
     }
     index++;
   });

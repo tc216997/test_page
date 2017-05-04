@@ -46,17 +46,14 @@ b,strong {font-weight:700;}
 .text-center {text-align:center!important;}
 .text-right {text-align:right!important;}
 
-img {
+.responsive-img {
   border:0;
   display:block;
   height:auto;
   max-width:95%;
   width:auto;
 }
-.owl-item img, .full-img {
-  max-width: none;
-  width:100%;
-}
+
 table {
   background:none repeat scroll 0 0 #fff;
   border:1px solid #f0f0f0;

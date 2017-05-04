@@ -1,6 +1,6 @@
 let visited = {};
 let wasVisited = JSON.parse(localStorage.getItem('visited'))? true:false;
-let isIndexPage = window.location.pathname === '/' || window.location.pathname === '/index.html'? true:false;
+let isIndexPage = (window.location.pathname === '/' || window.location.pathname === '/index.html')? true:false;
 let viewportWidth = viewport().width;
 let sectionElements = document.getElementsByTagName('section');
 let indexiframeDiv1 = document.getElementById('iframe-div1');
@@ -9,16 +9,7 @@ let indexiframes = document.getElementsByTagName('iframe');
 let indexiframe1a = document.getElementById('index-iframe1-a');
 let indexiframe2a = document.getElementById('index-iframe2-a');
 jQuery(document).ready(function($) {
-  // Owl Carousel
-  $(".carousel-default").owlCarousel({
-     navigation : false,
-   	 slideSpeed : 300,
-   	 pagination: false,
-   	 autoPlay : false,
-     addClassActive: true,
-     navigationText: ["&#xe605","&#xe606"],
-   	 singleItem:true
-  });
+
   // Sticky Nav Bar
   $(window).scroll(function() {
     if ($(this).scrollTop() > 20){
@@ -29,10 +20,15 @@ jQuery(document).ready(function($) {
     }
   });
   //fadein and fadeout the divs
-  $('#get-started').click(() => {
+  $('#get-started-btn').click(() => {
+
     $('#main-header').fadeOut(500);
-    $('#div-wrapper-top').fadeIn(500);
-    $('#div-wrapper-bot').fadeIn(500);
+    $('#div-wrapper-top').fadeIn(500, function(){
+      $(this).removeClass();
+    });
+    $('#div-wrapper-bot').fadeIn(500, function() {
+      $(this).removeClass();
+    });
     localStorage.setItem('visited', true);
   });
 
