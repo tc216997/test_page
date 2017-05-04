@@ -9,7 +9,6 @@ let indexiframes = document.getElementsByTagName('iframe');
 let indexiframe1a = document.getElementById('index-iframe1-a');
 let indexiframe2a = document.getElementById('index-iframe2-a');
 jQuery(document).ready(function($) {
-
   // Sticky Nav Bar
   $(window).scroll(function() {
     if ($(this).scrollTop() > 20){
@@ -21,13 +20,12 @@ jQuery(document).ready(function($) {
   });
   //fadein and fadeout the divs
   $('#get-started-btn').click(() => {
-
     $('#main-header').fadeOut(500);
     $('#div-wrapper-top').fadeIn(500, function(){
-      $(this).removeClass();
+      removeClass(document.getElementById('div-wrapper-top'), 'display-none');
     });
     $('#div-wrapper-bot').fadeIn(500, function() {
-      $(this).removeClass();
+      removeClass(document.getElementById('div-wrapper-bot'), 'display-none');
     });
     localStorage.setItem('visited', true);
   });
@@ -54,8 +52,7 @@ jQuery(document).ready(function($) {
 
 if (wasVisited && isIndexPage) {
   removeClass(document.getElementById('div-wrapper-top'), 'display-none');
-  removeClass(document.getElementById('div-wrapper-bot'), 'display-none')
-  addDisplayNoneMainHeader();
+  removeClass(document.getElementById('div-wrapper-bot'), 'display-none');
 }
 
 if(!wasVisited && isIndexPage) {
