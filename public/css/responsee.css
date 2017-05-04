@@ -433,13 +433,18 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
     text-align:center;
     vertical-align:middle;
   }
+
   .nav-text:after {
-    content:"\f008";
-    font-family:"mfg";
+    content:"\f0c9";
+    font-family:FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
     font-size:1.1rem;
     margin-left:0.5rem;
     text-align:right;
   }
+
   #kangen {
     text-align: center!important;
     margin-right: 0!important;
