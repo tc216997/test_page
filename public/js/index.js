@@ -89,10 +89,12 @@ function smallMobileStyles() {
   for(let i = 0; i < indexiframes.length; i++) {
     indexiframes[i].style.width = '400px';
     indexiframes[i].style.marginBottom = '10px';
-  }
-  // section 3 p tags centering
+  };
+  // section 3 ptags centering
   document.getElementById('index-section3-p2').style.textAlign = 'center';
   document.getElementById('index-section3-p3').style.textAlign = 'center';
+  document.getElementById('index-section2-button').style.width = '400px';
+  document.getElementById('index-section2-button').style.float = 'none';
 }
 
 function largerMobileStyles() {

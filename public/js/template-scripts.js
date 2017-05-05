@@ -27,7 +27,7 @@ let navEle= document.getElementById('sticky-nav');
 let topHeaderEle = document.getElementById('top-header');
 if (navEle.offsetHeight === 148) {
   topHeaderEle.style.marginTop = '170px';
-} else if (navEle.offsetHeight === 89) {
+} else if (navEle.offsetHeight === 90) {
   topHeaderEle.style.marginTop = '30px';
 } else {
   topHeaderEle.style.marginTop = '100px';
