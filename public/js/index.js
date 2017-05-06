@@ -32,9 +32,6 @@ jQuery(document).ready(function($) {
     localStorage.setItem('visited', true);
   });
 
-  //src1 https://www.youtube.com/embed/mWae__xM46o
-  //src2 https://www.youtube.com/embed/72MCumz5lq4
-
   // on window resize, insert responsive styles
   $(window).resize(() => {
     viewportWidth = viewport().width;
