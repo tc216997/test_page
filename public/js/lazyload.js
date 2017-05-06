@@ -1,25 +1,17 @@
-$(document).ready(function() {
-  lazyLoad()
-  // on scroll
-  $(window).scroll(function() {
-    lazyLoad();
-  });
-});
+let youtube = document.querySelectorAll('.youtube');
 
-// lazy loading the iframes by using the distance from top of the window
-// to element top position - 880px, since it takes time to load the embed,
-// decide to load up the iframe much earlier
-function lazyLoad() {
-  let windowTop = $(window).scrollTop();
-  let divs = $('.ytplayer-div');
-  let index = 0;
-  $('.ytplayer-div').each(function(item) {
-    let divTop = $(this).offset().top - 880;
-    let hasLoaded = $(this).attr('loaded');
-    if (!hasLoaded && windowTop >= divTop) {
-      $(this).attr('loaded', true);
-      $(this).html(ytVids[index]);
-    }
-    index++;
+for (let i = 0; i < youtube.length; i++) {
+  let source = 'https://img.youtube.com/vi/' + youtube[i].dataset.embed + '/hqdefault.jpg';
+  let image = new Image();
+  image.src = source;
+  youtube[i].appendChild(image)
+
+  youtube[i].addEventListener('click', function() {
+    let iframe = document.createElement('iframe');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('src', 'https://www.youtube.com/embed/' + this.dataset.embed + '?rel=0&showinfo=0&autoplay=1');
+    this.innerHTML = '';
+    this.appendChild(iframe);
   });
 }
