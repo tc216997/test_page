@@ -58,7 +58,6 @@ jQuery(document).ready(function($) {
 
 checkIfVisited();
 setSizeStyles();
-window.onload = loadIframeContent();
 
 function checkIfVisited() {
   // check if visited before, remove landing page if it was visited before
@@ -88,11 +87,6 @@ function setSizeStyles() {
   if (viewportWidth >= 1182) {
     fullWidthStyles()
   }
-}
-
-function loadIframeContent() {
-  document.getElementById('index-iframe1').src = 'https://www.youtube.com/embed/mWae__xM46o'
-  document.getElementById('index-iframe2').src = 'https://www.youtube.com/embed/72MCumz5lq4'
 }
 
 function smallMobileStyles() {
