@@ -22,5 +22,4 @@ function lazyLoad() {
     }
     index++;
   });
-
 }

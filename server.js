@@ -10,7 +10,7 @@ const server = express();
 server.set('port', process.env.PORT || 3000 );
 server.use(compression());
 server.use(bodyParser.urlencoded({extended:true}));
-server.use(express.static(path.resolve(__dirname, 'public')));
+server.use(express.static(path.resolve(__dirname, 'public'), {maxAge: '30d'}));
 
 let transporter = nodemailer.createTransport({
     service: 'Gmail',
@@ -25,10 +25,14 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-server.get('/', (req, res) => {
+server.get(/^\/(index)?$/, (req, res) => {
   res.sendFile(getFile('index'));
 });
-
+/**
+server.get('/index', (req, res) => {
+  res.sendFile(getFile('index'));
+});
+**/
 server.get('/science/', (req, res) => {
   res.sendFile(getFile('science'));
 });

@@ -1,7 +1,7 @@
 let visited = {};
 let wasVisited = JSON.parse(localStorage.getItem('visited'))? true:false;
-let isIndexPage = (window.location.pathname === '/' || window.location.pathname === '/index.html')? true:false;
-let viewportWidth = viewport().width;
+let isIndexPage = (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/index')? true:false;
+let viewportWidth = getViewportSize().width;
 let sectionElements = document.getElementsByTagName('section');
 let indexiframeDiv1 = document.getElementById('iframe-div1');
 let indexiframeDiv2 = document.getElementById('iframe-div2');
@@ -167,14 +167,4 @@ function addDisplayNoneNavBar(){
 }
 function removeClass(element, classname) {
     element.className = element.className.replace(new RegExp('(?:^|s)' + classname + '(?!S)'), '');
-}
-
-function viewport() {
-  // get viewport width
-    var e = window, a = 'inner';
-    if (!('innerWidth' in window )) {
-        a = 'client';
-        e = document.documentElement || document.body;
-    }
-    return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
 }
