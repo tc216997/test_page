@@ -1404,6 +1404,9 @@ textarea {
     text-shadow: 1px 1px 1px #46963f
 }
 
+.ytplayer-div{
+  background-color:#000;
+}
 .youtube {
     background-color: #000;
     margin-bottom: 30px;
