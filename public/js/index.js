@@ -32,6 +32,9 @@ jQuery(document).ready(function($) {
     localStorage.setItem('visited', true);
   });
 
+  //src1 https://www.youtube.com/embed/mWae__xM46o
+  //src2 https://www.youtube.com/embed/72MCumz5lq4
+
   // on window resize, insert responsive styles
   $(window).resize(() => {
     viewportWidth = viewport().width;
@@ -55,6 +58,7 @@ jQuery(document).ready(function($) {
 
 checkIfVisited();
 setSizeStyles();
+loadIframeContent();
 
 function checkIfVisited() {
   // check if visited before, remove landing page if it was visited before
@@ -84,6 +88,11 @@ function setSizeStyles() {
   if (viewportWidth >= 1182) {
     fullWidthStyles()
   }
+}
+
+function loadIframeContent() {
+  document.getElementById('index-iframe1').src = 'https://www.youtube.com/embed/mWae__xM46o'
+  document.getElementById('index-iframe2').src = 'https://www.youtube.com/embed/72MCumz5lq4'
 }
 
 function smallMobileStyles() {
