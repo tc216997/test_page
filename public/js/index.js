@@ -8,6 +8,7 @@ let indexiframeDiv2 = document.getElementById('iframe-div2');
 let indexiframes = document.getElementsByTagName('iframe');
 let indexiframe1a = document.getElementById('index-iframe1-a');
 let indexiframe2a = document.getElementById('index-iframe2-a');
+
 jQuery(document).ready(function($) {
   // Sticky Nav Bar
   $(window).scroll(function() {
@@ -18,6 +19,7 @@ jQuery(document).ready(function($) {
         $('.sticky').removeClass("fixed");
     }
   });
+
   //fadein and fadeout the divs
   $('#get-started-btn').click(() => {
     $('#main-header').fadeOut(500);
@@ -30,6 +32,10 @@ jQuery(document).ready(function($) {
     localStorage.setItem('visited', true);
   });
 
+  //src1 https://www.youtube.com/embed/mWae__xM46o
+  //src2 https://www.youtube.com/embed/72MCumz5lq4
+
+  // on window resize, insert responsive styles
   $(window).resize(() => {
     viewportWidth = viewport().width;
     if (viewportWidth <= 480) {
@@ -50,33 +56,43 @@ jQuery(document).ready(function($) {
   });
 });
 
-if (wasVisited && isIndexPage) {
-  removeClass(document.getElementById('div-wrapper-top'), 'display-none');
-  removeClass(document.getElementById('div-wrapper-bot'), 'display-none');
+checkIfVisited();
+setSizeStyles();
+window.onload = loadIframeContent();
+
+function checkIfVisited() {
+  // check if visited before, remove landing page if it was visited before
+  if (wasVisited && isIndexPage) {
+    removeClass(document.getElementById('div-wrapper-top'), 'display-none');
+    removeClass(document.getElementById('div-wrapper-bot'), 'display-none');
+  }
+  if(!wasVisited && isIndexPage) {
+    removeClass(document.getElementById('main-header'), 'display-none');
+  }
 }
 
-if(!wasVisited && isIndexPage) {
-  removeClass(document.getElementById('main-header'), 'display-none');
+function setSizeStyles() {
+  // set styles according to viewport width
+  if (viewportWidth <= 480) {
+    smallMobileStyles();
+  }
+  if (viewportWidth <= 768 && viewportWidth>= 481) {
+    largerMobileStyles();
+  }
+  if (viewportWidth <= 983 && viewportWidth >= 769) {
+    tabletStyles();
+  }
+  if (viewportWidth <= 1181 && viewportWidth >= 984) {
+    largerTabletStyles();
+  }
+  if (viewportWidth >= 1182) {
+    fullWidthStyles()
+  }
 }
 
-if (viewportWidth <= 480) {
-  smallMobileStyles();
-}
-
-if (viewportWidth <= 768 && viewportWidth>= 481) {
-  largerMobileStyles();
-}
-
-if (viewportWidth <= 983 && viewportWidth >= 769) {
-  tabletStyles();
-}
-
-if (viewportWidth <= 1181 && viewportWidth >= 984) {
-  largerTabletStyles();
-}
-
-if (viewportWidth >= 1182) {
-  fullWidthStyles()
+function loadIframeContent() {
+  document.getElementById('index-iframe1').src = 'https://www.youtube.com/embed/mWae__xM46o'
+  document.getElementById('index-iframe2').src = 'https://www.youtube.com/embed/72MCumz5lq4'
 }
 
 function smallMobileStyles() {
@@ -141,7 +157,6 @@ function fullWidthStyles() {
   document.getElementById('index-iframe1').style.width = 500 + 'px';
   document.getElementById('index-iframe2').style.width = 500 + 'px';
   document.getElementById('index-section2-button').style.cssFloat = 'none';
-
 }
 
 function addDisplayNoneMainHeader(){
