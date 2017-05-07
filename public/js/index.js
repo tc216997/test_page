@@ -32,8 +32,6 @@ jQuery(document).ready(function($) {
     localStorage.setItem('visited', true);
   });
 
-  //src1 https://www.youtube.com/embed/mWae__xM46o
-  //src2 https://www.youtube.com/embed/72MCumz5lq4
 
   // on window resize, insert responsive styles
   $(window).resize(() => {
@@ -167,4 +165,14 @@ function addDisplayNoneNavBar(){
 }
 function removeClass(element, classname) {
     element.className = element.className.replace(new RegExp('(?:^|s)' + classname + '(?!S)'), '');
+}
+
+function getViewportSize() {
+  // get viewport width
+    var e = window, a = 'inner';
+    if (!('innerWidth' in window )) {
+        a = 'client';
+        e = document.documentElement || document.body;
+    }
+    return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
 }

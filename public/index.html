@@ -82,6 +82,7 @@
                       <a id="index-iframe2-a" target="_blank" class="button btn-push navy s-12" href="http://www.foxnews.com/health/2014/01/13/more-than-24500-chemicals-found-in-bottled-water.html"><strong>Over 24,000 Chemicals found in bottled water</strong></a>
                     </div>
                   </div>
+
                 </div>
             </div>
             <hr class="break">
@@ -221,38 +222,34 @@
         </section>
       </footer>
   </div>
-  <script>
-  (function() {
-      function getScript(url,success){
-        let script=document.createElement('script');
-        script.src=url;
-        let head=document.getElementsByTagName('head')[0],
-            done=false;
-        script.onload=script.onreadystatechange = function(){
-          if ( !done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete') ) {
-            done=true;
-            success();
-            script.onload = script.onreadystatechange = null;
-            head.removeChild(script);
-          }
-        };
-        head.appendChild(script);
-      }
-        getScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',function(){
-            let jsSource = [ "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js",
-              "js/getViewportSize.js",
-              "js/index.js",
-              "js/responsee.js",
-            ];
-            jsSource.map(function(source){
-              let scriptTag = document.createElement('script');
-              scriptTag.type = "text/javascript"
-              scriptTag.src = source;
-              document.getElementsByTagName("head")[0].appendChild(scriptTag);
-            });
+  <script defer="defer" type="text/javascript">
+    function getjQuery(url,success){
+      let script=document.createElement('script');
+      script.src=url;
+      let head=document.getElementsByTagName('head')[0],
+        done=false;
+      script.onload=script.onreadystatechange = function(){
+        if ( !done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete') ) {
+          done=true;
+          success();
+          script.onload = script.onreadystatechange = null;
+          head.removeChild(script);
+        }
+      };
+      head.appendChild(script);
+    }
+    window.onload = function(){
+      getjQuery('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', function(){
+        let jsFiles = ['https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', 'js/index.js', 'js/responsee.js'];
+        jsFiles.map(source => {
+          let scriptTag = document.createElement('script');
+          scriptTag.type = "text/javascript"
+          scriptTag.src = source;
+          document.getElementsByTagName("head")[0].appendChild(scriptTag);
         });
-    })();
+      });
+    }
   </script>
-
+  </body>
   </body>
 </html>
