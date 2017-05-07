@@ -28,11 +28,7 @@ let transporter = nodemailer.createTransport({
 server.get(/^\/(index)?$/, (req, res) => {
   res.sendFile(getFile('index'));
 });
-/**
-server.get('/index', (req, res) => {
-  res.sendFile(getFile('index'));
-});
-**/
+
 server.get('/science/', (req, res) => {
   res.sendFile(getFile('science'));
 });
@@ -99,7 +95,7 @@ server.use((error, req, res, next) => {
 });
 
 server.listen(server.get('port'), () => {
-  console.log('so far everything ok at port ' + server.get('port'));
+  console.log('server listening at port ' + server.get('port'));
 });
 
 //get and return file path

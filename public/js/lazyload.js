@@ -1,11 +1,10 @@
+// lazyload youtube vids by using a picture in place of the iframe;
 let youtube = document.querySelectorAll('.youtube');
-
 for (let i = 0; i < youtube.length; i++) {
   let source = 'https://img.youtube.com/vi/' + youtube[i].dataset.embed + '/hqdefault.jpg';
   let image = new Image();
   image.src = source;
   youtube[i].appendChild(image)
-
   youtube[i].addEventListener('click', function() {
     let iframe = document.createElement('iframe');
     iframe.setAttribute('frameborder', '0');

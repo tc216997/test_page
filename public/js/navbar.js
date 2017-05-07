@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
     topHeaderHeight = $('#top-header').height();
     if (navHeight === 146) {
       $('#top-header').css('margin-top', '170px');
-    } else if (navHeight === 88 ){
+    } else if (navHeight === 88) {
       $('#top-header').css('margin-top', '30px');
     } else {
       $('#top-header').css('margin-top', '100px');
@@ -13,17 +13,15 @@ jQuery(document).ready(function($) {
   });
   // Sticky Nav Bar
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 20){
-        $('.sticky').addClass("fixed");
-    }
-    else{
-        $('.sticky').removeClass("fixed");
+    if ($(this).scrollTop() > 20) {
+      $('.sticky').addClass("fixed");
+    } else {
+      $('.sticky').removeClass("fixed");
     }
   });
-
 });
 // hacky solution to make the top header look responsive
-let navEle= document.getElementById('sticky-nav');
+let navEle = document.getElementById('sticky-nav');
 let topHeaderEle = document.getElementById('top-header');
 if (navEle.offsetHeight === 148) {
   topHeaderEle.style.marginTop = '170px';

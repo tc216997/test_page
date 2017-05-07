@@ -3,32 +3,31 @@
  * https://www.myresponsee.com
  * Copyright 2016, Vision Design - graphic zoo
  * Free to use under the MIT license.
-*/
+ */
 jQuery(document).ready(function($) {
   //Responsee tabs
   $('.tabs').each(function(intex, element) {
-      current_tabs = $(this);
-      $(this).prepend('<div class="tab-nav line"></div>');
-      var tab_buttons = $(element).find('.tab-label');
-      $(this).children('.tab-nav').prepend(tab_buttons);
-      $(this).children('.tab-item').each(function(i) {
-          $(this).attr("id", "tab-" + (i + 1));
+    current_tabs = $(this);
+    $(this).prepend('<div class="tab-nav line"></div>');
+    var tab_buttons = $(element).find('.tab-label');
+    $(this).children('.tab-nav').prepend(tab_buttons);
+    $(this).children('.tab-item').each(function(i) {
+      $(this).attr("id", "tab-" + (i + 1));
+    });
+    $(".tab-nav").each(function() {
+      $(this).children().each(function(i) {
+        $(this).attr("href", "#tab-" + (i + 1));
       });
-      $(".tab-nav").each(function() {
-          $(this).children().each(function(i) {
-              $(this).attr("href", "#tab-" + (i + 1));
-          });
-      });
-      $(this).find(".tab-nav a").click(function(event) {
-          $(this).parent().children().removeClass("active-btn");
-          $(this).addClass("active-btn");
-          var tab = $(this).attr("href");
-          $(this).parent().parent().find(".tab-item").not(tab).css("display", "none");
-          $(this).parent().parent().find(tab).fadeIn();
-          return false;
-      });
+    });
+    $(this).find(".tab-nav a").click(function(event) {
+      $(this).parent().children().removeClass("active-btn");
+      $(this).addClass("active-btn");
+      var tab = $(this).attr("href");
+      $(this).parent().parent().find(".tab-item").not(tab).css("display", "none");
+      $(this).parent().parent().find(tab).fadeIn();
+      return false;
+    });
   });
-
   //Responsee nav
   $('.top-nav > ul > li ul').each(function(index, element) {
     var count = $(element).find('li').length;
@@ -81,7 +80,6 @@ jQuery(document).ready(function($) {
       });
     }
   });
-
   //Active item
   var url = window.location.href;
   $('a').filter(function() {
