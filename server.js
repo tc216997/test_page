@@ -11,6 +11,12 @@ server.set('port', process.env.PORT || 3000 );
 server.use(compression());
 server.use(bodyParser.urlencoded({extended:true}));
 server.use(express.static(path.resolve(__dirname, 'public'), {maxAge: 86400000}));
+server.use((req, res, next) => {
+    if (req.url.match(/^\/(css|js|img|font)\/.+/)) {
+        res.setHeader('Cache-Control', 'public, max-age=3600'))
+    }
+    next();
+});
 
 let transporter = nodemailer.createTransport({
     service: 'Gmail',
