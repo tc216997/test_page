@@ -13,9 +13,9 @@ server.use(bodyParser.urlencoded({extended:true}));
 server.use(express.static(path.resolve(__dirname, 'public'), {maxAge: 86400000}));
 server.use((req, res, next) => {
     if (req.url.match(/^\/(css|js|img|font)\/.+/)) {
-        res.setHeader('Cache-Control', 'public, max-age=3600'))
+        res.setHeader('Cache-Control', 'public, max-age=3600')
     }
-    next();
+    next()
 });
 
 let transporter = nodemailer.createTransport({
