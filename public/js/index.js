@@ -35,7 +35,7 @@ jQuery(document).ready(function($) {
 
   // on window resize, insert responsive styles
   $(window).resize(() => {
-    viewportWidth = viewport().width;
+    viewportWidth = getViewportSize().width;
     if (viewportWidth <= 480) {
       smallMobileStyles();
     }
