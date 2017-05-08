@@ -50,6 +50,13 @@ jQuery(document).ready(function($) {
 });
 checkIfVisited();
 setSizeStyles();
+setIframeSrc()
+//https://www.youtube.com/embed/mWae__xM46o
+//https://www.youtube.com/embed/72MCumz5lq4
+function setIframeSrc() {
+  document.getElementById('index-iframe1').src = 'https://www.youtube.com/embed/mWae__xM46o';
+  document.getElementById('index-iframe2').src = 'https://www.youtube.com/embed/72MCumz5lq4';
+}
 
 function checkIfVisited() {
   // check if visited before, remove landing page if it was visited before
