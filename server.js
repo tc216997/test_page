@@ -10,7 +10,7 @@ const server = express();
 server.set('port', process.env.PORT || 3000 );
 server.use(compression());
 server.use(bodyParser.urlencoded({extended:true}));
-server.use(express.static(path.resolve(__dirname, 'public'), {maxAge: 180000}));
+server.use(express.static(path.resolve(__dirname, 'public'), {maxAge: 3600000}));
 let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
