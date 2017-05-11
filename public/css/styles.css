@@ -1037,8 +1037,8 @@ header.position-absolute {
 
 
 .v-center {
-    top: 50%;
-    transform: translateY(-50%)
+    top: 30%;
+    /*transform: translateY(-50%)*/
 }
 
 .v-center,
@@ -1578,4 +1578,36 @@ textarea {
   cursor:pointer;
   overflow: hidden;
   outline:none;
+}
+
+.margin-top-100{
+  margin-top: 100px;
+}
+
+.margin-top-300{
+  margin-top:300px;
+}
+
+.margin-top-170 {
+  margin-top: 170px;
+}
+
+.intro-divider{
+  height: 0;
+  margin-top:50px;
+  margin-bottom: 50px;
+  width:60%;
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.width-10{
+  width:10px!important;
+}
+
+.text-shadow {
+  color: #000;
+  text-shadow: 0px 1px 1px #fff;
 }

@@ -59,12 +59,24 @@
       <header class="display-none" id="main-header">
         <div>
           <div class="text-center" id="landing-text-div">
-            <h1 class="text-dark text-size-60 text-m-size-40 text-line-height-1 v-center">
+            <h1 class="text-dark text-size-60 text-m-size-40 text-line-height-1 v-center margin-bottom-30">
               <em class="text-shadow-black">Change your water.<br>
               Change your life.</em>
             </h1>
             <div class="center v-center">
-              <button class="button button-white-stroke" id="get-started-btn"><strong class="text-size-16">Get Started Now</strong></button>
+              <button class="button button-white-stroke" id="get-started-btn">
+                <strong class="text-size-16 text-shadow">Get Started Now</strong>
+              </button>
+              <hr class="intro-divider">
+              <h2><strong class="text-shadow">Follow me on</strong></h2>
+              <a href="https://preprod.instagram.com/late2wrk/" target="_blank" class="button button-white-stroke no-wrap inline-block">
+                <i class="fa fa-camera-retro width-10" aria-hidden="true"></i>
+                <strong class="text-shadow">Instagram</strong>
+              </a>
+              <a href="about:blank" target="" target="_blank" class="button button-white-stroke no-wrap inline-block">
+                <i class="fa fa-facebook-square fa-3 width-10" aria-hidden="true"></i>
+                <strong class="text-shadow">Facebook</strong>
+              </a>
             </div>
             <div></div>
           </div>
@@ -240,10 +252,7 @@
       <!-- Bottom Footer -->
       <section class="padding background-dark full-width footer-section">
         <p class="text-size-12">
-          Copyright 2017, Joe Gooch
-        </p>
-        <p class="text-size-12">
-          Template have been kindly provided by the <a class="text-size-12" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Responsee Team.</a>
+          Copyright 2017, Josef Gotsch
         </p>
         <p class="text-size-12">
           Background water image was kindly provided by <a class="text-size-12" href="http://eskipaper.com">Eskipaper.com.</a>
@@ -252,7 +261,8 @@
           Machine images are properties of <a class="text-size-12" href="https://www.enagic.com/">Enagic.</a>
         </p>
         <p class="text-size-12">
-          Modifications of the code and design were made by <a class="text-size-12" href="https://www.linkedin.com/in/chinfei-chong-5516b3116/">Terry Chong</a>.
+          This website was made possible by <a class="text-size-12" href="https://www.linkedin.com/in/chinfei-chong-5516b3116/">Chong Chinfei</a>,
+          with design help by <a class="text-size-12" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Responsee Team.</a>
         </p>
       </section>
     </footer>
@@ -274,7 +284,7 @@
     }
     window.onload = function(){
       getjQuery('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', function(){
-        let jsFiles = ['https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', 'js/index.js', 'js/responsee.js'];
+        let jsFiles = ['https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', 'https://use.fontawesome.com/1206593ced.js', 'js/index.js', 'js/responsee.js'];
         jsFiles.map(source => {
           let scriptTag = document.createElement('script');
           scriptTag.type = "text/javascript"
