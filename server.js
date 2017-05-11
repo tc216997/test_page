@@ -6,11 +6,12 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const compression = require('compression');
 const server = express();
-
+//, {maxAge: 3600000}
 server.set('port', process.env.PORT || 3000 );
 server.use(compression());
 server.use(bodyParser.urlencoded({extended:true}));
-server.use(express.static(path.resolve(__dirname, 'public'), {maxAge: 3600000}));
+server.use(express.static(path.resolve(__dirname, 'public')));
+
 let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -51,6 +52,12 @@ server.get('/contact/', (req, res) => {
 server.get('/email-sent', (req, res) => {
   res.status(200).sendFile(getFile('email-sent'));
 });
+
+server.get('/pdf', (req, res) => {
+  let filePath = path.resolve(__dirname, 'pdf')
+  let fileName = path.resolve(filePath, req.query.filename + '.pdf')
+  res.download(fileName);
+})
 
 server.post('/send-email', (req, res) => {
   let emailAddress = req.body.email;
@@ -117,7 +124,7 @@ function sendEmail(senderAddress, sender, emailSubject, emailMsg, res) {
       res.status(500).sendFile(getFile('bad-email'));
       return console.log(err);
     } else {
-      console.log('email %s sent: %s', info.messageId, info.response );
+      //console.log('email %s sent: %s', info.messageId, info.response );
       res.status(200).redirect('/email-sent');
     }
 
