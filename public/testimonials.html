@@ -64,7 +64,7 @@
           </div>
         </header>
         <section class="section background-white">
-          <div class="line"></div><!-- Youtube videos -->
+          <!-- Youtube videos -->
           <div class="line text-center">
             <div class="margin">
               <div class="s-12 m-12 l-4 margin-m-bottom special-width">
@@ -99,6 +99,26 @@
               </div>
             </div>
           </div>
+          <!-- Fb group footer modal -->
+          <div class="testimonials-modal" id="testimonials-modal">
+            <!-- modal content-->
+            <div class="testimonials-modal-content">
+              <!--modal header-->
+              <div class="testimonials-modal-header">
+                <span class="testimonials-modal-close" id="testimonials-modal-close">&times;</span>
+                <h2 class="text-white margin-bottom-0 text-center text-shadow"><strong>Talk to to real people with real testimonies</strong></h2>
+              </div>
+              <!-- modal body-->
+              <div class="testimonials-modal-body text-center">
+                <a id="modal-link" href="https://www.facebook.com/groups/640441996152970/" target="_blank"></strong>See testimonies on a daily basis HERE</strong></a>
+              </div>
+              <!--modal footer -->
+              <div class="testimonials-modal-footer">
+                <h2 class="text-white margin-bottom-0 text-center text-shadow"></strong>Check out the facebook group</strong></h2>
+              </div>
+            </div>
+          </div>
+
         </section>
       </article>
     </main><!-- FOOTER -->
@@ -139,7 +159,7 @@
       }
       window.onload = function(){
         getjQuery('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', function(){
-          let scripts = ['https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', 'js/responsee.js', 'js/navbar.js', 'js/lazyload.js'];
+          let scripts = ['https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', 'js/responsee.js', 'js/navbar.js', 'js/lazyload.js', 'js/testimonials.js'];
           scripts.map(source => {
             let scriptTag = document.createElement('script');
             scriptTag.type = "text/javascript"

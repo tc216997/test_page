@@ -1,6 +1,6 @@
 let visited = {};
 let wasVisited = JSON.parse(localStorage.getItem('visited')) ? true : false;
-let isIndexPage = (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/index') ? true : false;
+//let isIndexPage = (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/index') ? true : false;
 let viewportWidth = getViewportSize().width;
 let sectionElements = document.getElementsByTagName('section');
 let indexiframeDiv1 = document.getElementById('iframe-div1');
@@ -8,7 +8,7 @@ let indexiframeDiv2 = document.getElementById('iframe-div2');
 let indexiframes = document.getElementsByTagName('iframe');
 let indexiframe1a = document.getElementById('index-iframe1-a');
 let indexiframe2a = document.getElementById('index-iframe2-a');
-jQuery(document).ready(function($) {
+$(document).ready(function($) {
   // Sticky Nav Bar
   $(window).scroll(function() {
     if ($(this).scrollTop() > 20) {
@@ -51,8 +51,6 @@ jQuery(document).ready(function($) {
 checkIfVisited();
 setSizeStyles();
 setIframeSrc()
-//https://www.youtube.com/embed/mWae__xM46o
-//https://www.youtube.com/embed/72MCumz5lq4
 function setIframeSrc() {
   document.getElementById('index-iframe1').src = 'https://www.youtube.com/embed/mWae__xM46o';
   document.getElementById('index-iframe2').src = 'https://www.youtube.com/embed/72MCumz5lq4';
@@ -60,11 +58,11 @@ function setIframeSrc() {
 
 function checkIfVisited() {
   // check if visited before, remove landing page if it was visited before
-  if (wasVisited && isIndexPage) {
+  if (wasVisited) {
     removeClass(document.getElementById('div-wrapper-top'), 'display-none');
     removeClass(document.getElementById('div-wrapper-bot'), 'display-none');
   }
-  if (!wasVisited && isIndexPage) {
+  if (!wasVisited) {
     removeClass(document.getElementById('main-header'), 'display-none');
   }
 }
