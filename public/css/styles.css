@@ -1130,8 +1130,15 @@ a.button:visited {
 }
 
 #get-started-btn {
-    margin-top: 50px;
-    width: 75%
+    width: 75%;
+}
+
+.powder-blue-opacity {
+  background: rgba(176,224,230,0.6)!important;
+}
+
+.powder-blue-opacity:hover {
+  background: #fff!important;
 }
 
 .text-shadow-black {
@@ -1644,6 +1651,7 @@ textarea {
 @keyframes fadeIn {
     from {opacity: 0}
     to {opacity: 1}
+}
 
 /*end of testimonial modal*/
 
@@ -1672,20 +1680,20 @@ textarea {
 }
 
 .margin-top-100{
-  margin-top: 100px;
+  margin-top: 100px!important;
 }
 
 .margin-top-300{
-  margin-top:300px;
+  margin-top:300px!important;
 }
 
 .margin-top-170 {
-  margin-top: 170px;
+  margin-top: 170px!important;
 }
 
 .intro-divider{
   height: 0;
-  margin-top:50px;
+  margin-top:50px!important;
   margin-bottom: 50px;
   width:60%;
   border-left: 0;
@@ -1699,6 +1707,21 @@ textarea {
 }
 
 .text-shadow {
-  color: #000;
+  color: #000!important;
   text-shadow: 0px 1px 1px #fff;
+}
+
+#social-media-div {
+  position:absolute;
+  top:81%;
+  left:50%;
+}
+
+.absolute-center{
+  position:relative;
+  left:-50%;
+}
+
+.width-75 {
+  width:160px!important;
 }
