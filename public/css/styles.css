@@ -1722,6 +1722,15 @@ textarea {
   left:-50%;
 }
 
-.width-75 {
+.width-160 {
   width:160px!important;
+}
+
+@media screen and (max-width: 480px) {
+  .v-center{
+    top:10%;
+  }
+  #social-media-div {
+    top:69%
+  }
 }
