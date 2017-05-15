@@ -1,4 +1,3 @@
-let visited = {};
 let wasVisited = JSON.parse(localStorage.getItem('visited')) ? true: false;
 //let isIndexPage = (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname === '/index') ? true : false;
 let viewportWidth = getViewportSize().width;

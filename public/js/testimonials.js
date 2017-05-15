@@ -1,19 +1,15 @@
-let visitedFBGroup = localStorage.getItem('clickedOnFB')? true:false;
 let clicked = false;
 $(document).ready(function () {
-
   $('#testimonials-modal-close').click(closeModal);
 
   $('#modal-link').click(function () {
-    clicked = true;
-    localStorage.setItem('clickedOnFB', true);
     closeModal();
-  })
+  });
 
   $(window).scroll(function () {
     // check if scroll is near bottom
     if($(window).scrollTop() + $(window).height() >= $(document).height() -300) {
-      if (!visitedFBGroup || !clicked) {
+      if (!clicked) {
         openModal();
       }
     }
@@ -21,9 +17,15 @@ $(document).ready(function () {
 });
 
 function openModal() {
-  $('#testimonials-modal').css('display', 'block');
+  let visitedFBGroup = localStorage.getItem('clickedOnFB')? true:false;
+  clicked = true;
+  if (!visitedFBGroup) {
+    $('#testimonials-modal').css('display', 'block');
+  }
 }
 
 function closeModal() {
+  localStorage.setItem('clickedOnFB', true);
+  clicked = true;
   $('#testimonials-modal').css('display', 'none');
 }
