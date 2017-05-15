@@ -49,7 +49,8 @@ $(document).ready(function($) {
 });
 checkIfVisited();
 setSizeStyles();
-setIframeSrc()
+setIframeSrc();
+
 function setIframeSrc() {
   document.getElementById('index-iframe1').src = 'https://www.youtube.com/embed/mWae__xM46o';
   document.getElementById('index-iframe2').src = 'https://www.youtube.com/embed/72MCumz5lq4';
@@ -88,18 +89,22 @@ function setSizeStyles() {
 function smallMobileStyles() {
   // less than 481px viewport width
   document.getElementById('problems').style.marginTop = '0px';
+  document.getElementById('problems').style.padding = '0px';
   // align the iframe
   indexiframeDiv1.style.marginLeft = '0px';
   indexiframeDiv2.style.marginLeft = '0px';
+  indexiframeDiv1.style.marginRight = '0px';
+  indexiframeDiv2.style.marginRight = '0px';
+  indexiframe2a.style.width = viewportWidth - 40 + 'px';
   // set iframe width
   for (let i = 0; i < indexiframes.length; i++) {
-    indexiframes[i].style.width = '400px';
+    indexiframes[i].style.width = viewportWidth - 40 + 'px';
     indexiframes[i].style.marginBottom = '10px';
   };
   // section 3 ptags centering
   document.getElementById('index-section3-p2').style.textAlign = 'center';
   document.getElementById('index-section3-p3').style.textAlign = 'center';
-  document.getElementById('index-section2-button').style.width = '400px';
+  document.getElementById('index-section2-button').style.width = '75%';
   document.getElementById('index-section2-button').style.float = 'none';
 }
 
@@ -108,11 +113,11 @@ function largerMobileStyles() {
   document.getElementById('problems').style.marginTop = '0px';
   indexiframeDiv1.style.marginLeft = '0px';
   indexiframeDiv2.style.marginLeft = '0px';
-  document.getElementById('index-iframe1').style.width = viewportWidth - 80 + 'px';
+  document.getElementById('index-iframe1').style.width = viewportWidth - 30 + 'px';
   document.getElementById('index-iframe1').style.marginBottom = '10px';
-  document.getElementById('index-iframe2').style.width = viewportWidth - 80 + 'px';
+  document.getElementById('index-iframe2').style.width = viewportWidth - 30 + 'px';
   document.getElementById('index-iframe2').style.marginBottom = '10px';
-  document.getElementById('index-section2-button').style.width = viewportWidth - 80 + 'px';
+  document.getElementById('index-section2-button').style.width = viewportWidth - 30 + 'px';
   document.getElementById('index-section2-button').style.cssFloat = 'none';
   document.getElementById('index-order-div').style.textAlign = 'center';
   document.getElementById('index-section3-p2').style.textAlign = 'center';
