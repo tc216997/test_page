@@ -1713,8 +1713,9 @@ textarea {
 
 #social-media-div {
   position:absolute;
-  top:81%;
+  top:100%;
   left:50%;
+  transform:translateY(-100%)
 }
 
 .absolute-center{
@@ -1724,13 +1725,4 @@ textarea {
 
 .width-180 {
   width:180px!important;
-}
-
-@media screen and (max-width: 480px) {
-  .v-center{
-    top:10%;
-  }
-  #social-media-div {
-    top:69%
-  }
 }
